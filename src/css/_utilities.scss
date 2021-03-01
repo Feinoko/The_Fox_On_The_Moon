@@ -1,0 +1,19 @@
+// layout scaffolding
+
+@mixin layoutGuide($color: red, $thickness: 1) {
+  border: #{$thickness}px #{$color} solid;
+}
+
+@mixin layoutGuideBg($color: red, $thickness: 1px) {
+  border: #{$thickness} #{$color} solid;
+  background-color: lighten($color, 40%);
+}
+
+// layout
+
+@mixin flex($direction: row, $justify: center, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}

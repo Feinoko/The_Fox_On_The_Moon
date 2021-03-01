@@ -1,0 +1,19 @@
+{
+  "name": "new_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "prod": "parcel build src/index.html -d prod --out-file app.html",
+    "prod-gitpages": "parcel build src/index.html -d docs --public-url ./"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.32.4"
+  },
+  "dependencies": {
+  }
+}
