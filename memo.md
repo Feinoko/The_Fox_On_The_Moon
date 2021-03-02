@@ -30,6 +30,15 @@ Main steps for MVP (minimum viable product) :
 #5 : 
 ---
 
+Process cycle (for each site part) :
+==========
+#1 : BEM markup
+#2 : Styling with UI fundamentals (typo, spacing, colors, scaling, contrast)
+#3 : Accessibility check (semantics, aria-labels & roles, tab-focus order+styling)
+#4 : Responsiveness
+#5 : Props (animations, effects, cosmetics...)
+---
+
 secondary/optional features (added functionalities, cosmetic, UI/UX,... ):
 ------------------
 #1 : 
@@ -59,3 +68,14 @@ Stashed tasks (put on backburner to keep focused on current task)
 #7 : 
 #8 : 
 ========== 
+
+Questions to client:
+==========
+#1 : font for headers
+#2 : 
+#3 : 
+#4 : 
+#5 : 
+#6 : 
+#7 : 
+#8 : 

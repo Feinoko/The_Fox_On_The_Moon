@@ -12,8 +12,14 @@
 /* HEADER */
 
 .site-header {
+  color: $colorTextOnDarkBg;
+  font-size: $fontSizeHeader;
   height: auto;
   padding: 3vh 0;
+
+  * {
+    color: inherit;
+  }
   
   &__container {
     width: 90%;
@@ -23,7 +29,31 @@
     align-items: center;
   }
 
+  &__title {
+    font-family: $fontStackHeaders;
+    font-size: $fontSizeSiteTitle;
+    text-align: center;
+    flex-grow: 1;
+  }
+
+  &__language-and-cart-wrapper {
+    display: flex;
+    flex-basis: 20%;
+
+    div {
+      text-align: right;
+      width: 100%;
+      display: block;
+    }
+  }
+
+  &__cart {
+    display: inline-block;
+    margin-left: 20px;
+  }
+
   &__nav {
+    flex-basis: 20%;
     
     ul {
       display: flex;
@@ -38,6 +68,10 @@
 }
 
 .hero {
+  font-family: $fontStackHeaders;
+  color: $colorTextOnDarkBg;
+  text-align: center;
+  line-height: 1;
   position: absolute;
   z-index: -5;
   top: 0; left: 0;
@@ -48,7 +82,24 @@
   justify-content: center;
   align-items: center;
 
+  &__showcased-name {
+    font-size: $fontSizeAnnouncement;
+  }
+
+  &__showcased-info {
+    font-size: $fontSizeSubAnnouncement;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  &__showcased-name, &__showcased-info {
+    margin-bottom: 2rem;
+  }
+
   &__cta {
+    font-family: $fontStackContent;
+    font-size: $fontSizeCTA;
+    color: $ctaBtn;
     background-color: $colorTextOnDarkBg;
     padding: 2rem 4rem;
     border-radius: 70px;

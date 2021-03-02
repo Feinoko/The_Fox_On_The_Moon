@@ -10,63 +10,8 @@
 
 
 html {
+  font-family: $fontStackContent; // default font
   font-size: 62.5%; /* DX+UX friendly : so that 1rem = 10px... Using Rem is good for accessibility as it allows user to adjust font size with browser */
 }
 
-.site-header {
 
-  color: $colorTextOnDarkBg;
-  font-size: $fontSizeHeader;
-
-  * {
-    color: inherit;
-  }
-
-  &__nav {
-    font-family: $fontStackContent;
-    
-  }
-
-  &__title {
-    font-family: $fontStackHeaders;
-    font-size: $fontSizeSiteTitle;
-  }
-
-  &__language-and-cart-wrapper {
-    display: flex;
-
-    div {
-      margin-right: 20px;
-    }
-
-  }
-
-  nav ~ a {
-    font-size: $fontSizeHeader;
-  }
-
-}
-
-.hero {
-  color: $colorTextOnDarkBg;
-  text-align: center;
-
-  &__showcased-name {
-    font-size: $fontSizeAnnouncement;
-  }
-
-  &__showcased-info {
-    font-size: $fontSizeSubAnnouncement;
-    text-transform: uppercase;
-  }
-
-  &__showcased-name, &__showcased-info {
-    margin-bottom: 2rem;
-  }
-
-  &__cta {
-    font-size: $fontSizeCTA;
-    color: $ctaBtn;
-  }
-
-}

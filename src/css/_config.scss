@@ -1,7 +1,10 @@
 /* variables, mixins, functions... */
 
 /* fonts */
-$fontStackHeaders: 'Amiri', serif; // others: 'Benne', serif | 'Pompiere', serif;
+$fontStackHeaders: 'Amiri', serif; 
+// $fontStackHeaders: 'Benne', serif;
+// $fontStackHeaders: 'Pompiere', serif;
+
 $fontStackContent: 'Comic Neue', cursive;
 
 
@@ -18,6 +21,7 @@ $fontSizeAnnouncement: 11rem;
 
 /* COLORS */
 
+// backgrounds
 $colorHeaderBg1: #006674;
 $colorHeaderBg2: #068596;
 
