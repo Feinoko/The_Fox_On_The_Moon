@@ -26,19 +26,31 @@
 </head>
 
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-      </ul>
-      <h1 class="site-title">The Fox On The Moon</h1>
-      <a href="" class="cart-icon-placeholder">view cart</a>
-    </nav>
-
+  <header class="site-header">
+    <div class="site-header__container">
+      <nav class="site-header__nav">
+        <ul>
+          <li><a href="#">home</a></li>
+          <li><a href="#">shop</a></li>
+          <li><a href="#">about</a></li>
+          <li><a href="#">contact</a></li>
+        </ul>
+      </nav>
+      <h1 tabindex="0" class="site-header__title">The Fox On The Moon</h1>
+      <div class="site-header__language-and-cart-wrapper">
+        <div aria-label="language" role="language-selection"> <a href="#">EN</a> | <a href="#">FR</a></div>
+        <a href="">view cart</a>
+      </div>
+    </div>
   </header>
+  <div class="hero" role="presentation" aria-label="special collection announcement">
+    <div class="hero__grouper">
+      <h1 class="hero__showcased-name">golden scars</h1>
+      <h2 class="hero__showcased-info">february collection</h2>
+      <a href="#" class="hero__cta">Shop Now</a>
+    </div>
+  </div>
+
   <script src="./index.js"></script>
 </body>
 

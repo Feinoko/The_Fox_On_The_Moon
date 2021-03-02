@@ -4,3 +4,58 @@
 @import './utilities';
 @import './desktop';
 
+
+/* =======
+  INDEX
+========== */
+
+/* HEADER */
+
+.site-header {
+  height: auto;
+  padding: 3vh 0;
+  
+  &__container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__nav {
+    
+    ul {
+      display: flex;
+      list-style: none;
+  
+      li:not(li:last-child) {
+        margin-right: 20px;
+      }
+  
+    }
+  }
+}
+
+.hero {
+  position: absolute;
+  z-index: -5;
+  top: 0; left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to top right, $colorHeaderBg1, $colorHeaderBg2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__cta {
+    background-color: $colorTextOnDarkBg;
+    padding: 2rem 4rem;
+    border-radius: 70px;
+    display: inline-block;
+    margin-top: 1rem;
+  }
+
+
+
+}

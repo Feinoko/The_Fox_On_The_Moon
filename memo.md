@@ -42,10 +42,20 @@ problems/bugs to fix:
 #1 : 
 #2 : 
 #3 : 
+#4 : 
+#5 : 
+#6 : 
+#7 : 
+#8 : 
 
 Stashed tasks (put on backburner to keep focused on current task)
 ==========
-#1 : 
+#1 : center title
 #2 : 
 #3 : 
+#4 : 
+#5 : 
+#6 : 
+#7 : 
+#8 : 
 ========== 

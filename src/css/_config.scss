@@ -1,8 +1,8 @@
 /* variables, mixins, functions... */
 
 /* fonts */
-$fontForHeaders: 'Amiri', serif; // others: 'Benne', serif | 'Pompiere', serif;
-$fontForContent: 'Comic Neue', cursive;
+$fontStackHeaders: 'Amiri', serif; // others: 'Benne', serif | 'Pompiere', serif;
+$fontStackContent: 'Comic Neue', cursive;
 
 
 /* font sizes */
@@ -15,5 +15,17 @@ $fontSizeFooterSiteTitle: 2.6rem;
 $fontSizeSubAnnouncement: 4.6rem;
 $fontSizeAnnouncement: 11rem;
 
+
+/* COLORS */
+
+$colorHeaderBg1: #006674;
+$colorHeaderBg2: #068596;
+
+// font colors
+$colorTextOnDarkBg: rgb(230, 230, 230);
+$ctaBtn: $colorHeaderBg1;
+
+// z-indexes
+$zHero: -5;
 
 
