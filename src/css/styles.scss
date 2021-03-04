@@ -1,26 +1,32 @@
-@import './resets';
-@import './config';
-@import './typography';
-@import './utilities';
-@import './desktop';
-
+@import "./resets";
+@import "./config";
+@import "./typography";
+@import "./utilities";
+@import "./desktop";
 
 /* =======
   INDEX
 ========== */
+
+body {
+  overflow: hidden;
+}
 
 /* HEADER */
 
 .site-header {
   color: $colorTextOnDarkBg;
   font-size: $fontSizeHeader;
+  // font-weight: bolder;
+  position: relative;
+  z-index: $zSiteHeader;
   height: auto;
   padding: 3vh 0;
 
   * {
     color: inherit;
   }
-  
+
   &__container {
     width: 90%;
     margin: 0 auto;
@@ -31,13 +37,13 @@
 
   &__nav {
     flex-basis: 20%;
-    
+
     ul {
       display: flex;
       list-style: none;
-  
+
       li:not(li:last-child) {
-        margin-right: 20px;
+        margin-right: 30px;
       }
 
       li {
@@ -46,10 +52,10 @@
 
       li::after {
         background-color: $colorUnderlineMenu;
-        transition: transform .15s ease-in-out;
+        transition: transform 0.15s ease-in-out;
         transform: scaleX(0);
         transform-origin: right;
-        content:"";
+        content: "";
         position: absolute;
         width: 100%;
         height: 2px;
@@ -83,16 +89,15 @@
   }
 
   &__language {
-    
     a {
       display: inline-block;
-      padding: .5rem;
+      padding: 0.5rem;
     }
 
     .british,
     .french {
       position: relative;
-      transition: transform .3s ease;
+      transition: transform 0.3s ease;
 
       &:hover {
         font-weight: bolder;
@@ -100,24 +105,24 @@
       }
 
       &::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;left: 0;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      z-index: -1;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      border-radius: 50%;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        z-index: $zMenuUnderline;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 50%;
       }
 
       &:hover::after {
-        opacity: 0.30;
+        opacity: 0.3;
       }
-
     }
 
     .british::after {
@@ -127,17 +132,16 @@
     .french::after {
       background-image: url(../media/language-flags/frenchFlag.svg);
     }
-
   }
 
   &__cart {
     display: inline-block;
     margin-left: 20px;
-    padding: .5rem;
+    padding: 0.5rem;
   }
-
-  
 }
+
+/* HERO */
 
 .hero {
   font-family: $fontStackHeaders;
@@ -145,14 +149,41 @@
   text-align: center;
   line-height: 1;
   position: absolute;
-  z-index: -5;
-  top: 0; left: 0;
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(to top right, $colorHeaderBg1, $colorHeaderBg2);
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    background: url(../media/banners/banner-hero-darker2.svg);
+    z-index: $zHero;
+    background-repeat: repeat;
+    background-size: 180%;
+    background-position: 2% 0%;
+    filter: brightness(1.4);
+    animation: hero-pattern-morph 20s ease-in-out infinite alternate-reverse;
+  }
+
+  @keyframes hero-pattern-morph {
+  
+    from {
+      transform: scale(1.25);
+    }
+  
+    to {
+      transform: scale(1);
+    }
+  
+  }
 
   &__showcased-name {
     font-size: $fontSizeAnnouncement;
@@ -164,7 +195,8 @@
     text-transform: uppercase;
   }
 
-  &__showcased-name, &__showcased-info {
+  &__showcased-name,
+  &__showcased-info {
     margin-bottom: 2rem;
   }
 
@@ -178,7 +210,43 @@
     display: inline-block;
     margin-top: 1rem;
   }
-
-
-
 }
+
+.hero-overlay1,
+.hero-overlay2 {
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.hero-overlay1 {
+  background: linear-gradient(to top right, $colorHeaderBg1, $colorHeaderBg3);
+  z-index: $zHeroOverlay1;
+  will-change: opacity;
+  opacity: 1;
+  animation: hero-lighting 5s ease-in-out infinite alternate;
+}
+
+.hero-overlay2 {
+  background: linear-gradient(to top right, $colorHeaderBg3, $colorHeaderBg2);
+  z-index: $zHeroOverlay2;
+  will-change: opacity;
+  opacity: 1;
+  animation: hero-lighting 5s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes hero-lighting {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: .35;
+  }
+}
+
+
+
+
