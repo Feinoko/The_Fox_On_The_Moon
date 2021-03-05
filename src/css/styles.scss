@@ -17,7 +17,6 @@ body {
 .site-header {
   color: $colorTextOnDarkBg;
   font-size: $fontSizeHeader;
-  // font-weight: bolder;
   position: relative;
   z-index: $zSiteHeader;
   height: auto;
@@ -50,7 +49,11 @@ body {
         position: relative;
       }
 
-      li::after {
+      .site-header__home {
+        border-bottom: $colorUnderlineMenu 2px solid;
+      }
+
+      li:not(.site-header__home)::after { // underline effect ('not' is to avoid targeting the active li which should thus be already underlined)
         background-color: $colorUnderlineMenu;
         transition: transform 0.15s ease-in-out;
         transform: scaleX(0);
@@ -170,7 +173,7 @@ body {
     background-size: 180%;
     background-position: 2% 0%;
     filter: brightness(1.4);
-    animation: hero-pattern-morph 20s ease-in-out infinite alternate-reverse;
+    // animation: hero-pattern-morph 20s ease-in-out infinite alternate-reverse;
   }
 
   @keyframes hero-pattern-morph {
@@ -209,6 +212,14 @@ body {
     border-radius: 70px;
     display: inline-block;
     margin-top: 1rem;
+    transition: all .2s ease-in;
+
+    &:hover {
+      background-color: $colorUnderlineMenu;
+      transform: scale(1.1);
+      color: $colorTextOnDarkBg;
+    }
+
   }
 }
 
@@ -226,7 +237,7 @@ body {
   z-index: $zHeroOverlay1;
   will-change: opacity;
   opacity: 1;
-  animation: hero-lighting 5s ease-in-out infinite alternate;
+  // animation: hero-lighting 5s ease-in-out infinite alternate;
 }
 
 .hero-overlay2 {
@@ -234,7 +245,7 @@ body {
   z-index: $zHeroOverlay2;
   will-change: opacity;
   opacity: 1;
-  animation: hero-lighting 5s ease-in-out infinite alternate-reverse;
+  // animation: hero-lighting 5s ease-in-out infinite alternate-reverse;
 }
 
 @keyframes hero-lighting {
