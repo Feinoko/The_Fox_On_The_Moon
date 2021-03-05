@@ -53,8 +53,10 @@ body {
         border-bottom: $colorUnderlineMenu 2px solid;
       }
 
-      li:not(.site-header__home)::after { // underline effect ('not' is to avoid targeting the active li which should thus be already underlined)
+      li:not(.site-header__home)::after {
+        // underline effect ('not' is to avoid targeting the active li which should thus be already underlined)
         background-color: $colorUnderlineMenu;
+        will-change: transform;
         transition: transform 0.15s ease-in-out;
         transform: scaleX(0);
         transform-origin: right;
@@ -161,7 +163,7 @@ body {
   align-items: center;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     min-height: 100%;
@@ -173,19 +175,17 @@ body {
     background-size: 180%;
     background-position: 2% 0%;
     filter: brightness(1.4);
-    // animation: hero-pattern-morph 20s ease-in-out infinite alternate-reverse;
+    animation: hero-pattern-morph 2s ease-in-out 1 forwards;
   }
 
   @keyframes hero-pattern-morph {
-  
     from {
-      transform: scale(1.25);
+      transform: scale(1.4);
     }
-  
+
     to {
       transform: scale(1);
     }
-  
   }
 
   &__showcased-name {
@@ -212,14 +212,43 @@ body {
     border-radius: 70px;
     display: inline-block;
     margin-top: 1rem;
-    transition: all .2s ease-in;
+    transition: all 0.1s ease-in;
+    overflow: hidden;
 
     &:hover {
       background-color: $colorUnderlineMenu;
       transform: scale(1.1);
       color: $colorTextOnDarkBg;
-    }
 
+      // for text slideup animation on hover
+      div {
+        animation: text-slide-up .2s ease-in-out;
+
+        @keyframes text-slide-up {
+          45% {
+            opacity: .5;
+            transform: translateY(-200%);
+          }
+          46% { // hiding the element while it rushes down (teleport effect)
+            opacity: 0;
+          }
+          55% {
+            transform: translateY(200%);
+          }
+          56% {
+            opacity: 0;
+          }
+          57% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(0%);
+          }
+        }
+
+        
+      }
+    }
   }
 }
 
@@ -233,19 +262,19 @@ body {
 }
 
 .hero-overlay1 {
-  background: linear-gradient(to top right, $colorHeaderBg1, $colorHeaderBg3);
+  background: linear-gradient(to top right, $colorHeaderBg1, $colorHeaderBg2);
   z-index: $zHeroOverlay1;
-  will-change: opacity;
+  // will-change: opacity;
   opacity: 1;
-  // animation: hero-lighting 5s ease-in-out infinite alternate;
+  animation: hero-lighting 1s ease-in-out 2 alternate;
 }
 
 .hero-overlay2 {
-  background: linear-gradient(to top right, $colorHeaderBg3, $colorHeaderBg2);
+  background: linear-gradient(to top right, $colorHeaderBg2, $colorHeaderBg1);
   z-index: $zHeroOverlay2;
-  will-change: opacity;
+  // will-change: opacity;
   opacity: 1;
-  // animation: hero-lighting 5s ease-in-out infinite alternate-reverse;
+  animation: hero-lighting 1s ease-in-out 2 alternate-reverse;
 }
 
 @keyframes hero-lighting {
@@ -254,10 +283,6 @@ body {
   }
 
   100% {
-    opacity: .35;
+    opacity: 0.65;
   }
 }
-
-
-
-
