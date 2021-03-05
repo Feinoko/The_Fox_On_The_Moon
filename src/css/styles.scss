@@ -47,6 +47,8 @@ body {
 
       li {
         position: relative;
+
+
       }
 
       .site-header__home {
@@ -79,6 +81,7 @@ body {
     font-family: $fontStackHeaders;
     font-size: $fontSizeSiteTitle;
     text-align: center;
+    text-shadow: black 0 0 8px;
     flex-grow: 1;
   }
 
@@ -175,7 +178,7 @@ body {
     background-size: 180%;
     background-position: 2% 0%;
     filter: brightness(1.4);
-    animation: hero-pattern-morph 2s ease-in-out 1 forwards;
+    animation: hero-pattern-morph 20s ease-in-out infinite alternate;
   }
 
   @keyframes hero-pattern-morph {
@@ -215,14 +218,14 @@ body {
     transition: all 0.1s ease-in;
     overflow: hidden;
 
-    &:hover {
+    &:hover, &:focus {
       background-color: $colorUnderlineMenu;
       transform: scale(1.1);
       color: $colorTextOnDarkBg;
 
       // for text slideup animation on hover
       div {
-        animation: text-slide-up .2s ease-in-out;
+        animation: text-slide-up .6s ease-in-out;
 
         @keyframes text-slide-up {
           45% {
@@ -262,19 +265,19 @@ body {
 }
 
 .hero-overlay1 {
-  background: linear-gradient(to top right, $colorHeaderBg1, $colorHeaderBg2);
+  background: linear-gradient(to top right, $colorHeaderBg1, $colorHeaderBg3);
   z-index: $zHeroOverlay1;
   // will-change: opacity;
   opacity: 1;
-  animation: hero-lighting 1s ease-in-out 2 alternate;
+  animation: hero-lighting 7s ease-in-out infinite alternate;
 }
 
 .hero-overlay2 {
-  background: linear-gradient(to top right, $colorHeaderBg2, $colorHeaderBg1);
+  background: linear-gradient(to top right, $colorHeaderBg3, $colorHeaderBg4);
   z-index: $zHeroOverlay2;
   // will-change: opacity;
   opacity: 1;
-  animation: hero-lighting 1s ease-in-out 2 alternate-reverse;
+  animation: hero-lighting 7s ease-in-out infinite alternate-reverse;
 }
 
 @keyframes hero-lighting {
@@ -283,6 +286,6 @@ body {
   }
 
   100% {
-    opacity: 0.65;
+    opacity: 0.45;
   }
 }
