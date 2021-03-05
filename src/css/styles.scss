@@ -47,7 +47,14 @@ body {
 
       li {
         position: relative;
+        pointer-events: none;
 
+        a {
+          display: inline-block;
+          outline: none;
+          cursor: pointer;
+          pointer-events: initial;
+        }
 
       }
 
@@ -55,8 +62,8 @@ body {
         border-bottom: $colorUnderlineMenu 2px solid;
       }
 
-      li:not(.site-header__home)::after {
-        // underline effect ('not' is to avoid targeting the active li which should thus be already underlined)
+      li:not(.site-header__home) a::after {
+        // underline effect ('not' is to avoid targeting the active anchor which should thus be already underlined)
         background-color: $colorUnderlineMenu;
         will-change: transform;
         transition: transform 0.15s ease-in-out;
@@ -70,7 +77,8 @@ body {
         top: 100%;
       }
 
-      li:hover::after {
+      li:not(.site-header__home) a:hover::after,
+      li:not(.site-header__home) a:focus::after {
         transform: scaleX(1);
         transform-origin: left;
       }
@@ -106,8 +114,9 @@ body {
     .french {
       position: relative;
       transition: transform 0.3s ease;
+      outline: none;
 
-      &:hover {
+      &:hover, &:focus {
         font-weight: bolder;
         transform: scale(1.3);
       }
@@ -128,7 +137,7 @@ body {
         border-radius: 50%;
       }
 
-      &:hover::after {
+      &:hover::after, &:focus::after {
         opacity: 0.3;
       }
     }
