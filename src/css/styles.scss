@@ -182,12 +182,14 @@ body {
     top: 0;
     left: 0;
     background: url(../media/banners/banner-hero-darker2.svg);
+    transform: scale(1.4);
     z-index: $zHero;
     background-repeat: repeat;
     background-size: 180%;
     background-position: 2% 0%;
     filter: brightness(1.4);
-    animation: hero-pattern-morph 20s ease-in-out infinite alternate;
+    will-change: transform;
+    animation: hero-pattern-morph 10s ease-in-out 1 alternate forwards 3s;
   }
 
   @keyframes hero-pattern-morph {
@@ -276,17 +278,17 @@ body {
 .hero-overlay1 {
   background: linear-gradient(to top right, $colorHeaderBg1, $colorHeaderBg3);
   z-index: $zHeroOverlay1;
-  // will-change: opacity;
+  will-change: opacity;
   opacity: 1;
-  animation: hero-lighting 7s ease-in-out infinite alternate;
+  animation: hero-lighting 2s ease-in-out 4 alternate 2s;
 }
 
 .hero-overlay2 {
   background: linear-gradient(to top right, $colorHeaderBg3, $colorHeaderBg4);
   z-index: $zHeroOverlay2;
-  // will-change: opacity;
+  will-change: opacity;
   opacity: 1;
-  animation: hero-lighting 7s ease-in-out infinite alternate-reverse;
+  animation: hero-lighting 2s ease-in-out 4 alternate-reverse 2s;
 }
 
 @keyframes hero-lighting {
