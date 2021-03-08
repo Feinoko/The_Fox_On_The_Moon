@@ -34,15 +34,18 @@ body {
     align-items: center;
   }
 
+
+  /* nav bar */
+
   &__nav {
     flex-basis: 20%;
 
-    ul {
+    &-list {
       display: flex;
       list-style: none;
 
       li:not(li:last-child) {
-        margin-right: 30px;
+        margin-right: 3rem;
       }
 
       li {
@@ -62,7 +65,7 @@ body {
         border-bottom: $colorUnderlineMenu 2px solid;
       }
 
-      li:not(.site-header__home) a::after {
+      li:not(.site-header__home) .site-header__nav-item::after {
         // underline effect ('not' is to avoid targeting the active anchor which should thus be already underlined)
         background-color: $colorUnderlineMenu;
         will-change: transform;
@@ -77,13 +80,76 @@ body {
         top: 100%;
       }
 
-      li:not(.site-header__home) a:hover::after,
-      li:not(.site-header__home) a:focus::after {
+      li:not(.site-header__home) .site-header__nav-item:hover::after,
+      li:not(.site-header__home) .site-header__nav-item:focus::after {
         transform: scaleX(1);
         transform-origin: left;
       }
     }
   }
+
+
+
+  /* shop menu dropdown */
+
+  &__shop {
+    @include layoutGuide(yellow);
+
+    &:hover {
+      color: $colorTextNormal;
+      background-color: $colorHeaderDropdownMenuBg;
+    }
+
+  }
+
+  &__shop-dropdown {
+    font-size: $fontSizeContentText;
+    color: $colorTextNormal;
+    position: absolute;
+    left: -1px;
+    width: 300%;
+    height: auto;
+    // padding-left: 1rem;
+    background-color: $colorHeaderDropdownMenuBg;
+    background: linear-gradient(to bottom right, $colorHeaderDropdownMenuBg, darken($colorHeaderDropdownMenuBg, 20%));
+    box-shadow: 0 .3rem 2px darken($colorTextNormal,10%);
+  }
+
+  &__shop-dropdown-menu {
+    list-style: none;
+    width: 100%;
+    // padding-top: 1rem;
+  }
+
+  &__dropdown-items {
+    // margin-bottom: .7rem;
+    width: 100%;
+    
+    // @include layoutGuide();
+
+    a {
+      // @include layoutGuide();
+      
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: .7rem;
+      // transition: all .15s ease;
+      // color .15s ease;
+
+      &:hover {
+        background: linear-gradient(to right, $colorUnderlineMenu, lighten($colorUnderlineMenu,10%)) ;
+        color: $colorTextOnDarkBg;
+      }
+
+    }
+
+  }
+
+
+
+
+  /* site title, language & shopping cart */
 
   &__title {
     font-family: $fontStackHeaders;
@@ -158,6 +224,14 @@ body {
   }
 }
 
+
+
+
+
+
+
+
+
 /* HERO */
 
 .hero {
@@ -189,7 +263,7 @@ body {
     background-position: 2% 0%;
     filter: brightness(1.4);
     will-change: transform;
-    animation: hero-pattern-morph 10s ease-in-out 1 alternate forwards 3s;
+    // animation: hero-pattern-morph 10s ease-in-out 1 alternate forwards 3s;
   }
 
   @keyframes hero-pattern-morph {
@@ -259,8 +333,6 @@ body {
             transform: translateY(0%);
           }
         }
-
-        
       }
     }
   }
@@ -280,7 +352,7 @@ body {
   z-index: $zHeroOverlay1;
   will-change: opacity;
   opacity: 1;
-  animation: hero-lighting 2s ease-in-out 4 alternate 2s;
+  // animation: hero-lighting 2s ease-in-out 4 alternate 2s;
 }
 
 .hero-overlay2 {
@@ -288,7 +360,7 @@ body {
   z-index: $zHeroOverlay2;
   will-change: opacity;
   opacity: 1;
-  animation: hero-lighting 2s ease-in-out 4 alternate-reverse 2s;
+  // animation: hero-lighting 2s ease-in-out 4 alternate-reverse 2s;
 }
 
 @keyframes hero-lighting {

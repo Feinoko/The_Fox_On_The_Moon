@@ -29,11 +29,23 @@
   <header class="site-header">
     <div class="site-header__container">
       <nav class="site-header__nav">
-        <ul>
-          <li class="site-header__home"><a href="#">home</a></li>
-          <li class="site-header__shop"><a href="#">shop</a></li>
-          <li class="site-header__about"><a href="#">about</a></li>
-          <li class="site-header__contact"><a href="#">contact</a></li>
+        <ul class="site-header__nav-list">
+          <li class="site-header__home"><a class="site-header__nav-item" href="#">home</a></li>
+          <li class="site-header__shop">
+            <a class="site-header__nav-item" href="#">shop</a>
+            <div role="contentinfo" aria-label="dropdown shopping menu" class="site-header__shop-dropdown">
+              <ul class="site-header__shop-dropdown-menu">
+                <li class="site-header__dropdown-items"><a href="#">all</a></li>
+                <li class="site-header__dropdown-items"><a href="#">golden&nbsp;scars</a></li>
+                <li class="site-header__dropdown-items"><a href="#">statement</a></li>
+                <li class="site-header__dropdown-items"><a href="#">drop</a></li>
+                <li class="site-header__dropdown-items"><a href="#">stud</a></li>
+                <li class="site-header__dropdown-items"><a href="#">on sale</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="site-header__about"><a class="site-header__nav-item" href="#">about</a></li>
+          <li class="site-header__contact"><a class="site-header__nav-item" href="#">contact</a></li>
         </ul>
       </nav>
       <h1 class="site-header__title"><a tabindex="0" href="/">The Fox On The Moon</a></h1>
