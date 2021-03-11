@@ -12,9 +12,6 @@ body {
   overflow: hidden;
 }
 
-
-
-
 /* HEADER */
 
 .site-header {
@@ -42,102 +39,110 @@ body {
   &__nav {
     flex-basis: 20%;
 
-    &-list {
-      display: flex;
-      list-style: none;
-
-      li:not(li:last-child) {
-        margin-right: 1.5rem;
-      }
-
-      li:not(.site-header__dropdown-items) {
-        position: relative;
-        pointer-events: none;
-        padding: .3rem 1rem;
-
-        a {
-          display: inline-block;
-          outline: none;
-          cursor: pointer;
-          pointer-events: initial;
-        }
-      }
-
-      .site-header__home {
-        border-bottom: $colorUnderlineMenu 2px solid;
-      }
-
-      li:not(.site-header__home) .site-header__nav-item::after {
-        // underline effect ('not' is to avoid targeting the active anchor which should thus be already underlined)
-        background-color: $colorUnderlineMenu;
-        will-change: transform;
-        transition: transform 0.15s ease-in-out;
-        transform: scaleX(0);
-        transform-origin: right;
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        left: 0;
-        top: 100%;
-      }
-
-      li:not(.site-header__home) .site-header__nav-item:hover::after,
-      li:not(.site-header__home) .site-header__nav-item:focus::after {
-        transform: scaleX(1);
-        transform-origin: left;
-      }
-    }
-
     &-item {
       white-space: nowrap; // only to prevent the 'shop' caret from line breaking
     }
-
   }
 
+  &__nav-list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__list-item:not(li:last-child) {
+    margin-right: 1.5rem;
+  }
+
+  &__list-item:not(.site-header__dropdown-items) {
+    position: relative;
+    // pointer-events: none;
+    padding: 0.3rem 1rem;
+  }
+
+  &__list-item--active {
+    border-bottom: $colorUnderlineMenu 2px solid;
+  }
+
+  &__nav-item {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    pointer-events: initial;
+  }
+
+  // underline effect ('not' is to avoid targeting the active anchor which should thus be already underlined)
+  &__list-item:not(.site-header__list-item--active) .site-header__nav-item {
+   
+    &::after {
+      background-color: $colorUnderlineMenu;
+      will-change: transform;
+      transition: transform 0.15s ease-in-out;
+      transform: scaleX(0);
+      transform-origin: right;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      left: 0;
+      top: 100%;
+    }
+
+    &:hover::after,
+    &:focus::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
 
 
 
 
   /* shop menu dropdown */
 
-  &__shop {
+  &__list-item--dropdown {
     position: relative;
+    
     &:hover {
       color: $colorTextNormal;
       background-color: $colorHeaderDropdownMenuBg;
-      &::after { /* colored border-left effect without affecting layout */
-        content: '';
+      
+      &::after {
+        /* colored border-left effect without affecting layout */
+        content: "";
         position: absolute;
-        left: -2px; top: 0;
+        left: -2px;
+        top: 0;
         width: 2px;
         height: 100%;
         background-color: $colorUnderlineMenu;
       }
 
+      // caret goes back to normal 'up' position on hover
       .site-header__caret {
         transform: rotate(0);
       }
 
-      .site-header__shop-dropdown {
+      // make dropdown menu appear on hover
+      .site-header__shop-dropdown, .site-header__shop-dropdown:hover {
         display: block;
       }
-
     }
   }
 
+  // dropdown indicator
   &__caret {
     font-weight: bold;
     color: $colorUnderlineMenu;
     display: inline-block;
     position: relative;
     top: 0.5rem;
-    margin-left: .4rem;
+    margin-left: 0.4rem;
     height: 1.7rem;
-    transform: rotate(.5turn);
+    transform: rotate(0.5turn);
   }
 
   &__shop-dropdown {
+    @include layoutGuide();
     font-size: $fontSizeContentText;
     color: $colorTextNormal;
     position: absolute;
@@ -152,6 +157,9 @@ body {
     border-left: 2px solid $colorUnderlineMenu;
     border-radius: 0 0 1rem 0.5rem;
     display: none;
+
+    
+
   }
 
   &__shop-dropdown-menu {
@@ -170,12 +178,15 @@ body {
   &__dropdown-items {
     // margin-bottom: .7rem;
     width: 100%;
+    cursor: pointer;
+    
 
     a {
       display: block;
       width: 100%;
       height: 100%;
       padding: 0.7rem;
+      @include layoutGuide();
 
       &:hover {
         background: linear-gradient(to right, $colorUnderlineMenu, lighten($colorUnderlineMenu, 10%));
@@ -183,8 +194,7 @@ body {
       }
     }
   }
-
-
+  
 
 
 
@@ -264,13 +274,6 @@ body {
     padding: 0.5rem;
   }
 }
-
-
-
-
-
-
-
 
 /* HERO */
 
