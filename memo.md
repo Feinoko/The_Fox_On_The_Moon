@@ -1,81 +1,84 @@
-Description of project / features
-===============================
--> redo Max's Thefoxonthemoon website
+# Description of project / features
 
-coding guidelines memo 
-=============
-KISS : Keep It Stupid Simple
-DRY : Dont Repeat Yourself
-YAGNI : You Aint Gonna Need it
-Break it down to very small bits
-Organise structure beforehand
-=============
+redo Max's Thefoxonthemoon website      
 
-Current-task 
-==========
+***
+  
+## coding guidelines memo 
+
+* KISS : Keep It Stupid Simple
+* DRY : Dont Repeat Yourself
+* YAGNI : You Aint Gonna Need it
+* Break it down to very small bits
+* Organise structure beforehand
+
+***
+
+## Main steps for MVP (minimum viable product) :
+* 
+* 
+* 
+* 
+* 
+
+***
+
+## Current-task 
 -> 
----
-Steps to complete:
-#1 : 
-#2 : 
-#3 : 
----
 
-Main steps for MVP (minimum viable product) :
-==========
-#1 : 
-#2 : 
-#3 : 
-#4 : 
-#5 : 
----
+## Steps to complete:
+* 
+* 
+* 
 
-Process cycle (for each site part) :
-==========
-#1 : BEM markup
-#2 : Styling with UI fundamentals (typo, spacing, colors, scaling, contrast)
-#3 : Accessibility check (semantics, aria-labels & roles, tab-focus order+styling)
-#4 : Responsiveness
-#5 : Props (animations, effects, cosmetics...)
----
+***
 
-secondary/optional features (added functionalities, cosmetic, UI/UX,... ):
-------------------
-#1 : 
-#2 : 
-#3 : 
+## Process cycle (for each site part) :
+* BEM markup
+* Styling with UI fundamentals (typo, spacing, colors, scaling, contrast)
+* Accessibility check (semantics, aria-labels & roles, tab-focus order+styling)
+* Responsiveness
+* Props (animations, effects, cosmetics...)
 
+*** 
 
-problems/bugs to fix:
-------------------
-#1 : 
-#2 : 
-#3 : 
-#4 : 
-#5 : 
-#6 : 
-#7 : 
-#8 : 
+## Secondary/optional features (added functionalities, cosmetic, UI/UX,... ):
+* 
+* 
+* 
 
-Stashed tasks (put on backburner to keep focused on current task)
-==========
-#1 : center title
-#2 : 
-#3 : 
-#4 : 
-#5 : 
-#6 : 
-#7 : 
-#8 : 
-========== 
+***
 
-Questions to client:
-==========
-#1 : font for headers
-#2 : 
-#3 : 
-#4 : 
-#5 : 
-#6 : 
-#7 : 
-#8 : 
+## Problems/bugs to fix:
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+
+***
+
+## Stashed tasks (put on backburner to keep focused on current task)
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+
+***
+## Questions to client:
+
+* font for headers
+* 
+* 
+* 
+* 
+* 
+* 
+* 
