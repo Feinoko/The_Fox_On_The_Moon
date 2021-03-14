@@ -2,7 +2,6 @@
 @import "./config";
 @import "./typography";
 @import "./utilities";
-@import "./desktop";
 
 /* =======
   INDEX
@@ -37,7 +36,8 @@ body {
   /* nav bar */
 
   &__nav {
-    flex-basis: 20%;
+    flex-basis: 30%;
+    background-color: rebeccapurple;
 
     &-item {
       white-space: nowrap; // only to prevent the 'shop' caret from line breaking
@@ -46,6 +46,7 @@ body {
 
   &__nav-list {
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
   }
 
@@ -209,11 +210,13 @@ body {
     text-align: center;
     text-shadow: black 0 0 8px;
     flex-grow: 1;
+    background-color: lightcoral;
   }
 
   &__language-and-cart-wrapper {
     display: flex;
-    flex-basis: 20%;
+    flex-basis: 30%;
+    background-color: palegreen;
 
     div {
       text-align: right;

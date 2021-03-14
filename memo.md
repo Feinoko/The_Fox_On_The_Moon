@@ -15,9 +15,9 @@ redo Max's Thefoxonthemoon website
 ***
 
 ## Main steps for MVP (minimum viable product) :
-* 
-* 
-* 
+* Functional ecommerce site with same layout
+* bilingual
+* enhanced UI/UX & props
 * 
 * 
 
@@ -30,6 +30,12 @@ redo Max's Thefoxonthemoon website
 * 
 * 
 * 
+
+## next steps:
+* responsiveness
+* title fancy anim
+* onload text fade/slideup
+* shop now btn glass reflection animation
 
 ***
 
@@ -53,11 +59,7 @@ redo Max's Thefoxonthemoon website
 * 
 * 
 * 
-* 
-* 
-* 
-* 
-* 
+
 
 ***
 
@@ -65,10 +67,7 @@ redo Max's Thefoxonthemoon website
 * 
 * 
 * 
-* 
-* 
-* 
-* 
+
 * 
 
 ***
@@ -77,8 +76,4 @@ redo Max's Thefoxonthemoon website
 * font for headers
 * 
 * 
-* 
-* 
-* 
-* 
-* 
+
