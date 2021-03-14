@@ -12,6 +12,7 @@ $fontStackContent: 'Comic Neue', cursive;
 $fontSizeContentText: 1.6rem;
 $fontSizeHeader: 2rem;
 $fontSizeSiteTitle: 3.9rem;
+$fontSizeSiteTitle_mob: 2.5rem;
 $fontSizeCTA: 2.1rem;
 $fontSizeFavs: 2.3rem;
 $fontSizeFooterSiteTitle: 2.6rem;
@@ -34,7 +35,7 @@ $colorTextNormal: rgb(46, 46, 46);
 $ctaBtn: $colorHeaderBg1;
 
 // other
-$colorUnderlineMenu: lighten($colorHeaderBg3,30%);
+$colorUnderlineMenu: lighten($colorHeaderBg3,30%); //#d654e1
 
 // z-indexes
 $zSiteHeader: 5;

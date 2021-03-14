@@ -3,6 +3,7 @@
 @import "./typography";
 @import "./utilities";
 
+
 /* =======
   INDEX
 ========== */
@@ -44,6 +45,11 @@ body {
     }
   }
 
+  &__burger {
+    @include layoutGuide();
+    display:none;
+  }
+
   &__nav-list {
     display: flex;
     flex-wrap: wrap;
@@ -51,13 +57,13 @@ body {
   }
 
   &__list-item:not(li:last-child) {
-    margin-right: 1.5rem;
+    margin-right: 2%;
   }
 
   &__list-item:not(.site-header__dropdown-items) {
     position: relative;
     // pointer-events: none;
-    padding: 0.3rem 1rem;
+    padding: 0.3rem 2.5%;
   }
 
   &__list-item--active {
@@ -163,9 +169,6 @@ body {
     transform: scaleY(0);
     transform-origin: top;
     transition: transform .2s ease-in-out;
-
-    
-
   }
 
   &__shop-dropdown-menu {
@@ -423,3 +426,6 @@ body {
     opacity: 0.45;
   }
 }
+
+/* media queries */
+@import "./media-queries/responsive-main-header";

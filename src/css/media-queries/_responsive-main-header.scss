@@ -1,0 +1,35 @@
+@media screen and (max-width: 1150px) {
+  
+
+  /*  */
+
+  .site-header {
+
+    &__burger {
+      display: block;
+    }
+
+    &__title {
+      flex-grow: 0;
+      font-size: $fontSizeSiteTitle_mob;
+    }
+
+    &__nav, &__language-and-cart-wrapper {
+      flex-basis: 25%;
+    }
+
+    &__nav-list {
+      display: none;
+    }
+
+    &__cart {
+      margin-left: 5px;
+    }
+
+  }
+
+  
+
+
+
+}
