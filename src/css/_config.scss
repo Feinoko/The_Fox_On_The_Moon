@@ -31,11 +31,11 @@ $colorHeaderDropdownMenuBg: #f3f3f3;
 
 // font colors
 $colorTextOnDarkBg: $colorHeaderDropdownMenuBg;
-$colorTextNormal: rgb(46, 46, 46);
+$colorTextNormal: rgb(46, 46, 46); // +burger active stroke
 $ctaBtn: $colorHeaderBg1;
 
 // other
-$colorUnderlineMenu: lighten($colorHeaderBg3,30%); //#d654e1
+$colorUnderlineMenu: #d654e1; // +burger stroke
 
 // z-indexes
 $zSiteHeader: 5;

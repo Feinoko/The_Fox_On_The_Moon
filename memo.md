@@ -64,10 +64,9 @@ redo Max's Thefoxonthemoon website
 ***
 
 ## Stashed tasks (put on backburner to keep focused on current task)
+* add fox background to mob overlay menu (b&w, bottom right)
 * 
 * 
-* 
-
 * 
 
 ***

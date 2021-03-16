@@ -1,12 +1,18 @@
 @media screen and (max-width: 1150px) {
   
 
-  /*  */
+  /* HEADER */
 
   .site-header {
 
+    // display burger, arranging header content
+
     &__burger {
-      display: block;
+      display: inline-block;
+      align-self: center;
+      cursor: pointer;
+      position: fixed;
+      z-index: $zSiteHeader;
     }
 
     &__title {
@@ -25,6 +31,59 @@
     &__cart {
       margin-left: 5px;
     }
+
+
+    // mobile overlay
+
+    &__mobile-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 0%;
+      height: 100vh;
+      background: #f3f3f3;
+      transition: all .3s ease-in-out;
+
+      // class added on clicking burger
+      &--transition {
+        width: 40%;
+      }
+    }
+
+
+    // burger morph
+
+    &__burger {
+      #burger-top-bar, #burger-bottom-bar {
+        stroke:$colorUnderlineMenu;
+        stroke-width:3px;
+        transition: all .2s ease;
+        
+      }
+    }
+    // change color
+    &__burger--transition {
+      #burger-top-bar, #burger-bottom-bar {
+        stroke: $colorTextNormal;
+        stroke-width: 2px;
+      }
+    }
+    // become a cross
+    &__burger--transition {
+
+      
+
+      #burger-top-bar {
+        transform-origin: 16px 4px;
+        transform:  rotate(45deg);
+      }
+      #burger-bottom-bar {
+        transform-origin: 16px 12px;
+        transform: rotate(-45deg);
+        
+      }
+    }
+
+    // animation
 
   }
 
