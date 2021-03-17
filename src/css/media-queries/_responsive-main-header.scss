@@ -42,10 +42,14 @@
       height: 100vh;
       background: #f3f3f3;
       transition: all .3s ease-in-out;
+      opacity: 0; // by default, controlled in script
+
 
       // class added on clicking burger
       &--transition {
         width: 40%;
+        display: initial;
+        
       }
     }
 
@@ -70,8 +74,6 @@
     // become a cross
     &__burger--transition {
 
-      
-
       #burger-top-bar {
         transform-origin: 16px 4px;
         transform:  rotate(45deg);
@@ -79,11 +81,24 @@
       #burger-bottom-bar {
         transform-origin: 16px 12px;
         transform: rotate(-45deg);
-        
       }
     }
 
-    // animation
+    // overlay nav menu
+
+    &__mobile-nav-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      display: inherit;
+      height: auto;
+      background-color: brown;
+    }
+
+    &__mobile-nav-list {
+
+    }
 
   }
 
