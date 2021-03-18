@@ -42,12 +42,14 @@
       height: 100vh;
       background: #f3f3f3;
       transition: all .3s ease-in-out;
+      display: initial;
       opacity: 0; // by default, controlled in script
 
 
       // class added on clicking burger
       &--transition {
-        width: 40%;
+        
+        width: 300px;
         display: initial;
         
       }
@@ -93,10 +95,34 @@
       transform: translate(-50%,-50%);
       display: inherit;
       height: auto;
-      background-color: brown;
     }
 
-    &__mobile-nav-list {
+    &__mobile-nav-list a {
+      font-size: $fontSizeFooterSiteTitle;
+      color: lighten($colorTextNormal,20%);
+      text-transform: uppercase;
+      display: block;
+      padding: 2rem;
+      transition: all .3s ease;
+
+      &:hover {
+        
+        color: $colorUnderlineMenu;
+        transform: translateY(-3px);
+      }
+
+      &:hover span {
+        
+        transform: translateY(-3px) translateX(.2rem);
+        
+      }
+
+      span { // the small shop arrow (for submenu)
+        font-size: 1.3rem;
+        display: inline-block;
+        transform: translateY(-.4rem);
+        transition: transform .3s ease;
+      }
 
     }
 
