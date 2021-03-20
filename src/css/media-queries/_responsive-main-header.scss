@@ -33,11 +33,6 @@
     }
 
 
-    // mobile overlay
-
-    
-
-
     // burger morph
 
     &__burger {
@@ -66,6 +61,13 @@
         transform-origin: 16px 12px;
         transform: rotate(-45deg);
       }
+
+      &:hover {
+        #burger-top-bar, #burger-bottom-bar {
+          stroke: $colorUnderlineMenu;
+        }
+      }
+
     }
 
 

@@ -26,7 +26,11 @@ burger_EL.addEventListener('click', () => {
   // burger morph infographics
   burger_EL.classList.toggle('site-header__burger--transition');
 
-  // 
+  // remove also the submenu, if it is active
+  if(sub_overlay_EL.offsetWidth != 0) {
+    sub_overlay_EL.classList.remove('site-header__mobile-overlay--transition');
+    sub_overlay_EL.style.opacity = '0';
+  }
 })
 
 
