@@ -227,19 +227,19 @@ body {
   &__language-and-cart-wrapper {
     display: flex;
     flex-basis: 30%;
-    // background-color: palegreen;
-
-    div {
-      text-align: right;
-      width: 100%;
-      display: block;
-    }
+    @include layoutGuide();
   }
 
   &__language {
+
+    text-align: right;
+    width: 100%;
+    display: block;
+
     a {
       display: inline-block;
       padding: 0.5rem;
+      @include layoutGuide(lemonchiffon);
     }
 
     .british,
@@ -289,6 +289,7 @@ body {
     display: inline-block;
     margin-left: 20px;
     padding: 0.5rem;
+    @include layoutGuide(blue,2);
   }
 }
 

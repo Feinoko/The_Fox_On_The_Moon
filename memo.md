@@ -32,7 +32,7 @@ redo Max's Thefoxonthemoon website
 * 
 
 ## next steps:
-* responsiveness : return btn on mob submenu
+* responsiveness : invert language & cart in markup and change flex order (cart should be at the top on mobile layout)
 * title fancy anim
 * onload text fade/slideup
 * shop now btn glass reflection animation

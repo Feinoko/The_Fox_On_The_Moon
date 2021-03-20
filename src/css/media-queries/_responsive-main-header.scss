@@ -162,6 +162,47 @@
 
     }
 
+    // arranging top-right header (language & art) layout
+
+    &__language {
+      white-space: nowrap;
+      @include layoutGuide(white);
+
+      // remove the pipe "|"
+      span {
+        display: none;
+      }
+
+      // vertical align 
+      .british, .french {
+        display: block;
+      }
+
+    }
+
+    // cancel flex
+    &__language-and-cart-wrapper {
+      display: block; // overriding flex
+    }
+
+    // shrink more burger & language/cart section
+    @media screen and (max-width: 580px) {
+
+      &__language-and-cart-wrapper, &__nav {
+        flex-basis: 15%; // taking much less hori space
+      }
+    }
+
+    &__cart {
+      margin-left: 0;
+    }
+
+    // reducing font size 
+    &__language, &__cart {
+      text-align: center;
+      width: 100%;
+    }
+
   }
 
   
