@@ -32,7 +32,7 @@ redo Max's Thefoxonthemoon website
 * 
 
 ## next steps:
-* responsiveness
+* responsiveness : return btn on mob submenu
 * title fancy anim
 * onload text fade/slideup
 * shop now btn glass reflection animation
@@ -65,8 +65,8 @@ redo Max's Thefoxonthemoon website
 
 ## Stashed tasks (put on backburner to keep focused on current task)
 * add fox background to mob overlay menu (b&w, bottom right)
-* 
-* 
+* make "on sale" standout in submenu
+* refactor js (DRY on mobile menu logic)
 * 
 
 ***

@@ -3,12 +3,16 @@ import '../../css/styles.scss' // styles entry point
 
 /* mobile navigation */
 
+
+/* mobile main menu */
+
 const overlay_EL = document.querySelector('.site-header__mobile-overlay');
 const burger_EL = document.querySelector('.site-header__burger');
 
 burger_EL.addEventListener('click', () => {
 
-  // make mobile nav invisible after it is closed...
+
+  // make mobile menu invisible after it is closed...
   if (overlay_EL.offsetWidth != 0) {
     overlay_EL.style.opacity = '0';
     // ... or visible if opening
@@ -22,7 +26,31 @@ burger_EL.addEventListener('click', () => {
   // burger morph infographics
   burger_EL.classList.toggle('site-header__burger--transition');
 
+  // 
+})
 
 
+/* mobile sub menu */
 
+const sub_overlay_EL = document.querySelector('.site-header nav:nth-child(2)');
+// get shop (trigger)
+const shop_EL = document.querySelector('#shop');
+
+shop_EL.addEventListener('click', (e) => {
+
+  // make mobile sub menu visible 
+  sub_overlay_EL.style.opacity = '1';
+
+  // slides in
+  sub_overlay_EL.classList.add('site-header__mobile-overlay--transition');
+
+
+  // retract
+  // get return arrow
+  const returnArrow_EL = document.querySelector('.sub-menu-return');
+  // retract sub nav when click the arrow
+  returnArrow_EL.addEventListener('click', () => {
+    sub_overlay_EL.classList.remove('site-header__mobile-overlay--transition');
+    sub_overlay_EL.style.opacity = '0';
+  })
 })

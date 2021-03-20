@@ -27,18 +27,33 @@
 
 <body>
   <header class="site-header">
+    <!-- mq: mobile menu -->
     <nav class="site-header__mobile-overlay">
       <div class="site-header__mobile-nav-container">
         <ul class="site-header__mobile-nav-list">
-          <li><a href="">home</a></li>
-          <li><a href="">shop&nbsp;<span>&#x276F;</span></a></li>
-          <li><a href="">about</a></li>
-          <li><a href="">contact</a></li>
+          <li><a href="#">home</a></li>
+          <li><a id="shop" href="#">shop&nbsp;<span>&#x276F;</span></a></li>
+          <li><a href="#">about</a></li>
+          <li><a href="#">contact</a></li>
         </ul>
       </div>
     </nav>
+    <!-- mq: mobile sub-menu -->
+    <nav class="site-header__mobile-overlay">
+      <div class="site-header__mobile-nav-container">
+        <ul class="site-header__mobile-nav-list">
+          <li><a href="#">all</a></li>
+          <li><a href="#">golden scars</a></li>
+          <li><a href="#">statement</a></li>
+          <li><a href="#">drop</a></li>
+          <li><a href="#">sub</a></li>
+          <li><a href="#">on sale</a></li>
+        </ul>
+        <span class="sub-menu-return">&#x276F;</span>
+      </div>
+    </nav>
     <div class="site-header__container">
-      <!-- media query -->
+      <!-- mq: burger menu icon -->
       <svg class="site-header__burger" xmlns="http://www.w3.org/2000/svg" width="49" height="36" viewBox="0 -9 49 36"
         fill="none">
         <g id="burger-menu">

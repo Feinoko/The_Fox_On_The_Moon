@@ -35,25 +35,7 @@
 
     // mobile overlay
 
-    &__mobile-overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 0%;
-      height: 100vh;
-      background: #f3f3f3;
-      transition: all .3s ease-in-out;
-      display: initial;
-      opacity: 0; // by default, controlled in script
-
-
-      // class added on clicking burger
-      &--transition {
-        
-        width: 300px;
-        display: initial;
-        
-      }
-    }
+    
 
 
     // burger morph
@@ -86,7 +68,59 @@
       }
     }
 
+
     // overlay nav menu
+
+    &__mobile-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 0%;
+      height: 100vh;
+      background: #f3f3f3;
+      transition: all .3s ease-in-out;
+      display: initial;
+      opacity: 0; // by default, controlled in script
+
+
+      // class added on clicking burger
+      &--transition {
+        width: 300px;
+        display: initial;
+      }
+
+      .sub-menu-return {
+        font-size: 3rem;
+        font-weight: 200;
+        color:lighten($colorTextNormal,10%);
+        position: absolute;
+        top:50%; left: -30px;
+        display: block;
+        padding: 100px 0;
+        padding-right: 15px; // left (rotated)
+        padding-left: 15px;
+        transform: translate(-25px, -50%) rotate(0.5turn);
+        cursor: pointer;
+        transition: color .2s ease;
+        animation: nudge-arrow .4s ease-in-out alternate infinite;
+
+        @keyframes nudge-arrow {
+          from {
+            transform: translate(-25px, -50%) rotate(0.5turn);
+          }
+
+          to {
+            transform: translate(-29px, -50%) rotate(0.5turn);
+          }
+
+        }
+
+        &:hover {
+          color: $colorUnderlineMenu;
+        }
+
+      }
+
+    }
 
     &__mobile-nav-container {
       position: absolute;
