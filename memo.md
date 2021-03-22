@@ -56,7 +56,7 @@ redo Max's Thefoxonthemoon website
 ***
 
 ## Problems/bugs to fix:
-* 
+* layout breaks on mobile (background overflows, hide it on body?)
 * 
 * 
 

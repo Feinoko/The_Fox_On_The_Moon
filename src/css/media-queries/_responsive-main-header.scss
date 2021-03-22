@@ -1,6 +1,16 @@
 @media screen and (max-width: 1150px) {
   
 
+  // removing the 300ms tap delay on mobile (waiting if user will double tap to zoom)
+  html { // removing the 300ms delay on mobile
+    touch-action: manipulation; // disables the double tap to zoom
+  }
+
+  // prevent blue background when tapping a link on mobile
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
   /* HEADER */
 
   .site-header {
