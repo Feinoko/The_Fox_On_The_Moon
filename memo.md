@@ -73,7 +73,7 @@ redo Max's Thefoxonthemoon website
 ***
 ## Ninja fixes (memo for potential future breaks):
 * added "overflow:hidden" to overflow-hidden-on-mobile in responsive styles
-* 
+* inverted order of cart and language in styles, so that on mobile the cart appears on top
 * 
 
 ***

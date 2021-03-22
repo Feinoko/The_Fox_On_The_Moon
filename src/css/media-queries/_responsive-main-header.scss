@@ -1,6 +1,4 @@
 @media screen and (max-width: 1150px) {
-  
-
   // seems body/html overflow is not parsed in mobile browsers (stackoverflow reported issue:https://stackoverflow.com/questions/14270084/overflow-xhidden-doesnt-prevent-content-from-overflowing-in-mobile-browsers)
   .overflow-hidden-on-mobile {
     width: 100%;
@@ -10,7 +8,8 @@
   }
 
   // removing the 300ms tap delay on mobile (waiting if user will double tap to zoom)
-  html { // removing the 300ms delay on mobile
+  html {
+    // removing the 300ms delay on mobile
     touch-action: manipulation; // disables the double tap to zoom
   }
 
@@ -22,7 +21,6 @@
   /* HEADER */
 
   .site-header {
-
     // display burger, arranging header content
 
     &__burger {
@@ -35,10 +33,12 @@
 
     &__title {
       flex-grow: 0;
+      flex-basis: 50%;
       font-size: $fontSizeSiteTitle_mob;
     }
 
-    &__nav, &__language-and-cart-wrapper {
+    &__nav,
+    &__language-and-cart-wrapper {
       flex-basis: 25%;
     }
 
@@ -50,30 +50,29 @@
       margin-left: 5px;
     }
 
-
     // burger morph
 
     &__burger {
-      #burger-top-bar, #burger-bottom-bar {
-        stroke:$colorUnderlineMenu;
-        stroke-width:3px;
-        transition: all .2s ease;
-        
+      #burger-top-bar,
+      #burger-bottom-bar {
+        stroke: $colorUnderlineMenu;
+        stroke-width: 3px;
+        transition: all 0.2s ease;
       }
     }
     // change color
     &__burger--transition {
-      #burger-top-bar, #burger-bottom-bar {
+      #burger-top-bar,
+      #burger-bottom-bar {
         stroke: $colorTextNormal;
         stroke-width: 2px;
       }
     }
     // become a cross
     &__burger--transition {
-
       #burger-top-bar {
         transform-origin: 16px 4px;
-        transform:  rotate(45deg);
+        transform: rotate(45deg);
       }
       #burger-bottom-bar {
         transform-origin: 16px 12px;
@@ -81,26 +80,25 @@
       }
 
       &:hover {
-        #burger-top-bar, #burger-bottom-bar {
+        #burger-top-bar,
+        #burger-bottom-bar {
           stroke: $colorUnderlineMenu;
         }
       }
-
     }
-
 
     // overlay nav menu
 
     &__mobile-overlay {
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 0%;
       height: 100vh;
       background: #f3f3f3;
-      transition: all .3s ease-in-out;
+      transition: all 0.3s ease-in-out;
       display: initial;
       opacity: 0; // by default, controlled in script
-
 
       // class added on clicking burger
       &--transition {
@@ -111,17 +109,18 @@
       .sub-menu-return {
         font-size: 3rem;
         font-weight: 200;
-        color:lighten($colorTextNormal,10%);
+        color: lighten($colorTextNormal, 10%);
         position: absolute;
-        top:50%; left: -30px;
+        top: 50%;
+        left: -30px;
         display: block;
         padding: 100px 0;
         padding-right: 15px; // left (rotated)
         padding-left: 15px;
         transform: translate(-25px, -50%) rotate(0.5turn);
         cursor: pointer;
-        transition: color .2s ease;
-        animation: nudge-arrow .4s ease-in-out alternate infinite;
+        transition: color 0.2s ease;
+        animation: nudge-arrow 0.4s ease-in-out alternate infinite;
 
         @keyframes nudge-arrow {
           from {
@@ -131,71 +130,65 @@
           to {
             transform: translate(-29px, -50%) rotate(0.5turn);
           }
-
         }
 
         &:hover {
           color: $colorUnderlineMenu;
         }
-
       }
-
     }
 
     &__mobile-nav-container {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
       display: inherit;
       height: auto;
     }
 
     &__mobile-nav-list a {
       font-size: $fontSizeFooterSiteTitle;
-      color: lighten($colorTextNormal,20%);
+      color: lighten($colorTextNormal, 20%);
       text-transform: uppercase;
       display: block;
       padding: 2rem;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
 
       &:hover {
-        
         color: $colorUnderlineMenu;
         transform: translateY(-3px);
       }
 
       &:hover span {
-        
-        transform: translateY(-3px) translateX(.2rem);
-        
+        transform: translateY(-3px) translateX(0.2rem);
       }
 
-      span { // the small shop arrow (for submenu)
+      span {
+        // the small shop arrow (for submenu)
         font-size: 1.3rem;
         display: inline-block;
-        transform: translateY(-.4rem);
-        transition: transform .3s ease;
+        transform: translateY(-0.4rem);
+        transition: transform 0.3s ease;
       }
-
     }
 
     // arranging top-right header (language & art) layout
 
     &__language {
       white-space: nowrap;
-      @include layoutGuide(white);
+      // @include layoutGuide(white);
 
       // remove the pipe "|"
       span {
         display: none;
       }
 
-      // vertical align 
-      .british, .french {
+      // vertical align
+      .british,
+      .french {
         display: block;
       }
-
     }
 
     // cancel flex
@@ -203,24 +196,28 @@
       display: block; // overriding flex
     }
 
+    .british, .french {
+        padding: 5px 0;
+    }
+
     // shrink more burger & language/cart section
     @media screen and (max-width: 580px) {
-
-      &__language-and-cart-wrapper, &__nav {
-        flex-basis: 15%; // taking much less hori space
+      &__language-and-cart-wrapper,
+      &__nav {
+        flex-basis: 10%; // taking much less hori space
       }
     }
 
     &__cart {
       margin-left: 0;
+      padding: 5px 0;
     }
 
-    // reducing font size 
-    &__language, &__cart {
+    &__language,
+    &__cart {
       text-align: center;
       width: 100%;
     }
-
   }
 
   // removing overflow on mobile
@@ -229,7 +226,4 @@
       transform: scale(1.4);
     }
   }
-
-
-
 }
