@@ -67,11 +67,17 @@ redo Max's Thefoxonthemoon website
 * add fox background to mob overlay menu (b&w, bottom right)
 * make "on sale" standout in submenu
 * refactor js (DRY on mobile menu logic)
+* remove will-change and test
+
+
+***
+## Ninja fixes (memo for potential future breaks):
+* added "overflow:hidden" to overflow-hidden-on-mobile in responsive styles
+* 
 * 
 
 ***
 ## Questions to client:
-
 * font for headers
 * 
 * 

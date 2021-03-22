@@ -27,91 +27,91 @@
 </head>
 
 <body>
-  <header class="site-header">
-    <!-- mq: mobile menu -->
-    <nav class="site-header__mobile-overlay">
-      <div class="site-header__mobile-nav-container">
-        <ul class="site-header__mobile-nav-list">
-          <li><a href="#">home</a></li>
-          <li><a id="shop" href="#">shop&nbsp;<span>&#x276F;</span></a></li>
-          <li><a href="#">about</a></li>
-          <li><a href="#">contact</a></li>
-        </ul>
-      </div>
-    </nav>
-    <!-- mq: mobile sub-menu -->
-    <nav class="site-header__mobile-overlay">
-      <div class="site-header__mobile-nav-container">
-        <ul class="site-header__mobile-nav-list">
-          <li><a href="#">all</a></li>
-          <li><a href="#">golden scars</a></li>
-          <li><a href="#">statement</a></li>
-          <li><a href="#">drop</a></li>
-          <li><a href="#">sub</a></li>
-          <li><a href="#">on sale</a></li>
-        </ul>
-        <span class="sub-menu-return">&#x276F;</span>
-      </div>
-    </nav>
-    <div class="site-header__container">
-      <!-- mq: burger menu icon -->
-      <svg class="site-header__burger" xmlns="http://www.w3.org/2000/svg" width="49" height="36" viewBox="0 -9 49 36"
-        fill="none">
-        <g id="burger-menu">
-          <path id="burger-top-bar" d="M0 2H49" />
-          <path id="burger-bottom-bar" d="M0 16H49" />
-        </g>
-      </svg>
-      <!--  -->
-      <nav class="site-header__nav">
-        <ul class="site-header__nav-list">
-          <li class="site-header__list-item site-header__list-item--active"><a class="site-header__nav-item"
-              href="#">home</a></li>
-          <li class="site-header__list-item site-header__list-item--dropdown">
-            <a class="site-header__nav-item" href="#">shop<span class="site-header__caret">^</span></a>
-            <div role="contentinfo" aria-label="dropdown shopping menu" class="site-header__shop-dropdown">
-              <ul class="site-header__shop-dropdown-menu">
-                <li class="site-header__dropdown-items"><a href="#">all</a></li>
-                <li class="site-header__dropdown-items"><a href="#">golden&nbsp;scars</a></li>
-                <li class="site-header__dropdown-items"><a href="#">statement</a></li>
-                <li class="site-header__dropdown-items"><a href="#">drop</a></li>
-                <li class="site-header__dropdown-items"><a href="#">stud</a></li>
-                <li class="site-header__dropdown-items"><a href="#">on sale</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="site-header__list-item"><a class="site-header__nav-item" href="#">about</a></li>
-          <li class="site-header__list-item"><a class="site-header__nav-item" href="#">contact</a></li>
-        </ul>
-      </nav>
-      <h1 class="site-header__title"><a tabindex="0" href="/">The Fox On The Moon</a></h1>
-      <div class="site-header__language-and-cart-wrapper">
-        <div class="site-header__language" aria-label="language" role="language-selection">
-          <a class="british" href="#">EN</a> <span>|</span>
-          <a class="french" href="#">FR</a>
+  <div class="overflow-hidden-on-mobile">
+    <header class="site-header">
+      <!-- mq: mobile menu -->
+      <nav class="site-header__mobile-overlay">
+        <div class="site-header__mobile-nav-container">
+          <ul class="site-header__mobile-nav-list">
+            <li><a href="#">home</a></li>
+            <li><a id="shop" href="#">shop&nbsp;<span>&#x276F;</span></a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">contact</a></li>
+          </ul>
         </div>
-        <a class="site-header__cart" href="">cart</a>
+      </nav>
+      <!-- mq: mobile sub-menu -->
+      <nav class="site-header__mobile-overlay">
+        <div class="site-header__mobile-nav-container">
+          <ul class="site-header__mobile-nav-list">
+            <li><a href="#">all</a></li>
+            <li><a href="#">golden scars</a></li>
+            <li><a href="#">statement</a></li>
+            <li><a href="#">drop</a></li>
+            <li><a href="#">sub</a></li>
+            <li><a href="#">on sale</a></li>
+          </ul>
+          <span class="sub-menu-return">&#x276F;</span>
+        </div>
+      </nav>
+      <div class="site-header__container">
+        <!-- mq: burger menu icon -->
+        <svg class="site-header__burger" xmlns="http://www.w3.org/2000/svg" width="49" height="36" viewBox="0 -9 49 36"
+          fill="none">
+          <g id="burger-menu">
+            <path id="burger-top-bar" d="M0 2H49" />
+            <path id="burger-bottom-bar" d="M0 16H49" />
+          </g>
+        </svg>
+        <!--  -->
+        <nav class="site-header__nav">
+          <ul class="site-header__nav-list">
+            <li class="site-header__list-item site-header__list-item--active"><a class="site-header__nav-item"
+                href="#">home</a></li>
+            <li class="site-header__list-item site-header__list-item--dropdown">
+              <a class="site-header__nav-item" href="#">shop<span class="site-header__caret">^</span></a>
+              <div role="contentinfo" aria-label="dropdown shopping menu" class="site-header__shop-dropdown">
+                <ul class="site-header__shop-dropdown-menu">
+                  <li class="site-header__dropdown-items"><a href="#">all</a></li>
+                  <li class="site-header__dropdown-items"><a href="#">golden&nbsp;scars</a></li>
+                  <li class="site-header__dropdown-items"><a href="#">statement</a></li>
+                  <li class="site-header__dropdown-items"><a href="#">drop</a></li>
+                  <li class="site-header__dropdown-items"><a href="#">stud</a></li>
+                  <li class="site-header__dropdown-items"><a href="#">on sale</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="site-header__list-item"><a class="site-header__nav-item" href="#">about</a></li>
+            <li class="site-header__list-item"><a class="site-header__nav-item" href="#">contact</a></li>
+          </ul>
+        </nav>
+        <h1 class="site-header__title"><a tabindex="0" href="/">The Fox On The Moon</a></h1>
+        <div class="site-header__language-and-cart-wrapper">
+          <div class="site-header__language" aria-label="language" role="language-selection">
+            <a class="british" href="#">EN</a> <span>|</span>
+            <a class="french" href="#">FR</a>
+          </div>
+          <a class="site-header__cart" href="">cart</a>
+        </div>
+      </div>
+    </header>
+    <div class="hero" role="presentation" aria-label="special collection announcement">
+      <div class="hero__grouper">
+        <!-- layout helper -->
+        <h1 class="hero__showcased-name">golden scars</h1>
+        <h2 class="hero__showcased-info">february collection</h2>
+        <a href="#" class="hero__cta">
+          <div>Shop Now</div><!-- div: animation helper -->
+        </a>
       </div>
     </div>
-  </header>
-  <div class="hero" role="presentation" aria-label="special collection announcement">
-    <div class="hero__grouper">
-      <!-- layout helper -->
-      <h1 class="hero__showcased-name">golden scars</h1>
-      <h2 class="hero__showcased-info">february collection</h2>
-      <a href="#" class="hero__cta">
-        <div>Shop Now</div><!-- div: animation helper -->
-      </a>
-    </div>
+    <!-- overlays purpose only -->
+    <div class="hero-overlay1"></div>
+    <div class="hero-overlay2"></div>
+    <script src="./index.js"></script>
+    <!-- svg symbol -->
+  <!-- end overflow-hidden-on-mobile  -->
   </div>
-  <!-- overlays purpose only -->
-  <div class="hero-overlay1"></div>
-  <div class="hero-overlay2"></div>
-
-  <script src="./index.js"></script>
-
-  <!-- svg symbol -->
-
 </body>
 
 </html>

@@ -1,6 +1,14 @@
 @media screen and (max-width: 1150px) {
   
 
+  // seems body/html overflow is not parsed in mobile browsers (stackoverflow reported issue:https://stackoverflow.com/questions/14270084/overflow-xhidden-doesnt-prevent-content-from-overflowing-in-mobile-browsers)
+  .overflow-hidden-on-mobile {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+  }
+
   // removing the 300ms tap delay on mobile (waiting if user will double tap to zoom)
   html { // removing the 300ms delay on mobile
     touch-action: manipulation; // disables the double tap to zoom
@@ -215,7 +223,12 @@
 
   }
 
-  
+  // removing overflow on mobile
+  .hero {
+    &::after {
+      transform: scale(1.4);
+    }
+  }
 
 
 
