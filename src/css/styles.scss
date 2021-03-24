@@ -1,7 +1,7 @@
 @import "./resets";
 @import "./config";
-@import "./typography";
 @import "./utilities";
+@import "./typography";
 
 
 // DESKTOP FIRST // 
@@ -12,7 +12,15 @@
 
 
 body {
+  // overflow: hidden;
+  margin-bottom: 100vh; //dev only, to remove
+}
+
+/* container of the hero section */
+.hero-content {
+  min-height: 100vh;
   overflow: hidden;
+  position: relative;
 }
 
 /* HEADER */
@@ -223,6 +231,7 @@ body {
     line-height: 1.2;
     text-shadow: black 0 0 8px;
     flex-grow: 1;
+    margin: 0;
     // background-color: lightcoral;
   }
 
@@ -439,6 +448,29 @@ body {
     opacity: 0.45;
   }
 }
+
+
+
+/* Latest collection */
+
+
+.latest {
+
+  &__title {
+    margin-top: $sectionSpacer;
+  }
+  
+  &__showcase-spacer {
+    @include layoutGuide();
+    padding:  2*$sectionSpacer 0;
+  }
+
+}
+
+
+
+
+
 
 /* media queries */
 @import "./media-queries/responsive-main-header";

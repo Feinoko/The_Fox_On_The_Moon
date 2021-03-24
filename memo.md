@@ -56,8 +56,8 @@ redo Max's Thefoxonthemoon website
 ***
 
 ## Problems/bugs to fix:
-* layout breaks on mobile (background overflows, hide it on body?)
-* 
+* language flags aspect ratio
+* when clicking 'shop' in mob menu while scrolled further down, scrolls all the way back up 
 * 
 
 
@@ -71,10 +71,13 @@ redo Max's Thefoxonthemoon website
 
 
 ***
-## Ninja fixes (memo for potential future breaks):
-* added "overflow:hidden" to overflow-hidden-on-mobile in responsive styles
+## Reminders
 * inverted order of cart and language in styles, so that on mobile the cart appears on top
-* 
+* remove margin-bottom on body (dev only)
+* put back hero animations
+
+## Potential breaks
+*
 
 ***
 ## Questions to client:

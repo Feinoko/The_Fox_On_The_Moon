@@ -1,4 +1,4 @@
-// layout scaffolding
+/* LAYOUT HELPER */
 
 @mixin layoutGuide($color: red, $thickness: 1) {
   border: #{$thickness}px #{$color} solid;
@@ -9,11 +9,24 @@
   background-color: lighten($color, 40%);
 }
 
-// layout
+
+/* LAYOUT */
 
 @mixin flex($direction: row, $justify: center, $align: stretch) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
+}
+
+.text-content-wrapper {
+  width: 70%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.media-content-wrapper {
+  width: 80%;
+  max-width: 1400px;
+  margin: 0 auto;
 }

@@ -1,17 +1,35 @@
 // regular text font
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap");
 
 // replace Orpheus which is not available in Gfonts(font for headers) / 3 candidates for now (testing):
-@import url('https://fonts.googleapis.com/css2?family=Pompiere&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pompiere&display=swap");
 // or
-@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap");
 // or
-@import url('https://fonts.googleapis.com/css2?family=Benne&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Benne&display=swap");
 
 html {
   font-family: $fontStackContent; // default font
   font-size: 62.5%; /* DX+UX friendly : so that 1rem = 10px... Using Rem is good for accessibility as it allows user to adjust font size with browser */
+  color: rgb(58, 58, 58);
 }
 
+h1 {
+  font-family: $fontStackHeaders;
+  font-size: $fontSizeSubAnnouncement;
+}
 
+p {
+  font-size: $fontSizeContentText;
+  line-height: 1.6;
+  margin: 2rem 0;
+  @include layoutGuide(rgb(5, 140, 50));
+}
+
+.text-center {
+  text-align: center;
+}
+
+.content-text-smaller {
+  font-size: $fontSizeSmallerContentText;
+}

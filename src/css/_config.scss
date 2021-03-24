@@ -1,15 +1,17 @@
-/* variables, mixins, functions... */
+/* ====
+FONTS
+==== */
 
-/* fonts */
-$fontStackHeaders: 'Amiri', serif; 
+/* font stacks */
+$fontStackHeaders: "Amiri", serif;
 // $fontStackHeaders: 'Benne', serif;
 // $fontStackHeaders: 'Pompiere', serif;
 
-$fontStackContent: 'Comic Neue', cursive;
-
+$fontStackContent: "Comic Neue", cursive;
 
 /* font sizes */
-$fontSizeContentText: 1.6rem;
+$fontSizeSmallerContentText: 1.5rem;
+$fontSizeContentText: 1.7rem;
 $fontSizeHeader: 2rem;
 $fontSizeSiteTitle: 3.9rem;
 $fontSizeSiteTitle_mob: 2.5rem;
@@ -19,8 +21,9 @@ $fontSizeFooterSiteTitle: 2.6rem;
 $fontSizeSubAnnouncement: 4.6rem;
 $fontSizeAnnouncement: 11rem;
 
-
-/* COLORS */
+/* ====
+COLORS
+==== */
 
 // backgrounds
 $colorHeaderBg1: #014d57;
@@ -37,11 +40,15 @@ $ctaBtn: $colorHeaderBg1;
 // other
 $colorUnderlineMenu: #d654e1; // +burger stroke
 
+/* ====
+LAYOUT 
+==== */
+
+$sectionSpacer: 6rem;
+
 // z-indexes
 $zSiteHeader: 5;
 $zMenuUnderline: -5;
 $zHero: -10;
 $zHeroOverlay1: -15;
 $zHeroOverlay2: -20;
-
-
