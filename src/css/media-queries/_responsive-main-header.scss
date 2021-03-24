@@ -154,6 +154,7 @@
       display: block;
       padding: 2rem;
       transition: all 0.3s ease;
+      cursor: pointer;
 
       &:hover {
         color: $colorUnderlineMenu;
