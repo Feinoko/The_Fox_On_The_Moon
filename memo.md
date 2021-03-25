@@ -75,6 +75,7 @@ redo Max's Thefoxonthemoon website
 * inverted order of cart and language in styles, so that on mobile the cart appears on top
 * remove margin-bottom on body (dev only)
 * put back hero animations
+* accessibility : removed href on 'shop' mob menu to prevent page scrolling backup, it should not be an 'a' but div with aria label / role
 
 ## Potential breaks
 *

@@ -306,6 +306,8 @@ body {
   }
 }
 
+
+
 /* HERO */
 
 .hero {
@@ -453,7 +455,6 @@ body {
 
 /* Latest collection */
 
-
 .latest {
 
   &__title {
@@ -462,7 +463,23 @@ body {
   
   &__showcase-spacer {
     @include layoutGuide();
-    padding:  2*$sectionSpacer 0;
+    padding:  .75*$sectionSpacer 0;
+  }
+
+  &__showcase {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  a {
+    display: block;
+    padding: 1rem;
+    flex: 1 1 200px;
+  }
+
+  img {
+    width: 100%;
   }
 
 }
