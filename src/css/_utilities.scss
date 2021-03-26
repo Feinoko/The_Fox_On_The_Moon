@@ -30,3 +30,9 @@
   max-width: 1400px;
   margin: 0 auto;
 }
+
+.flex-container-wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

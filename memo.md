@@ -76,6 +76,7 @@ redo Max's Thefoxonthemoon website
 * remove margin-bottom on body (dev only)
 * put back hero animations
 * accessibility : removed href on 'shop' mob menu to prevent page scrolling backup, it should not be an 'a' but div with aria label / role
+* put back original favicon
 
 ## Potential breaks
 *

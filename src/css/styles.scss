@@ -466,15 +466,11 @@ body {
     padding:  .75*$sectionSpacer 0;
   }
 
-  &__showcase {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
+  
 
   a {
     display: block;
-    padding: 1rem;
+    margin: 1rem;
     flex: 1 1 200px;
   }
 
