@@ -25,20 +25,27 @@ $fontSizeAnnouncement: 11rem;
 COLORS
 ==== */
 
-// backgrounds
-$colorHeaderBg1: #014d57;
+/** global palette **/ 
+$colorAccentPrimary: #006c76;
+$colorFontPrimary: #173336;
+$colorFontAlt: #f3f3f3; // on dark bg
+
+// hero background
+$colorHeaderBg1: #014d57; 
 $colorHeaderBg2: #068596;
 $colorHeaderBg3: #7c1785;
 $colorHeaderBg4: #1963ed;
-$colorHeaderDropdownMenuBg: #f3f3f3;
+$colorHeaderDropdownMenuBg: $colorFontAlt; 
 
 // font colors
-$colorTextOnDarkBg: $colorHeaderDropdownMenuBg;
-$colorTextNormal: rgb(46, 46, 46); // +burger active stroke
-$ctaBtn: $colorHeaderBg1;
+$colorTextBright: $colorFontAlt;
 
 // other
 $colorUnderlineMenu: #d654e1; // +burger stroke
+$colorBurgerActiveStroke: $colorFontPrimary;
+
+// button
+$colorCtaBtn: $colorAccentPrimary;
 
 /* ====
 LAYOUT 

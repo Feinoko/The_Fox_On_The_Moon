@@ -27,7 +27,7 @@ body {
 /* HEADER */
 
 .site-header {
-  color: $colorTextOnDarkBg;
+  color: $colorTextBright;
   font-size: $fontSizeHeader;
   position: relative;
   z-index: $zSiteHeader;
@@ -128,7 +128,7 @@ body {
     position: relative;
     
     &:hover, &:focus-within {
-      color: $colorTextNormal;
+      color: $colorFontPrimary;
       background-color: $colorHeaderDropdownMenuBg;
       
       &::after {
@@ -171,7 +171,7 @@ body {
 
   &__shop-dropdown {
     font-size: $fontSizeContentText;
-    color: $colorTextNormal;
+    color: $colorFontPrimary;
     position: absolute;
     left: -2px;
     top: 88%; /* not 100% to avoid hover flicker when coming in dropdown menu from 'shop' hover */
@@ -180,7 +180,7 @@ body {
     // padding-left: 1rem;
     background-color: $colorHeaderDropdownMenuBg;
     background: linear-gradient(to bottom right, $colorHeaderDropdownMenuBg, darken($colorHeaderDropdownMenuBg, 20%));
-    box-shadow: 0 0.3rem 2px darken($colorTextNormal, 10%);
+    box-shadow: 0 0.3rem 2px darken($colorFontPrimary, 10%);
     border-left: 2px solid $colorUnderlineMenu;
     border-radius: 0 0 1rem 0.5rem;
     display: block;
@@ -215,7 +215,7 @@ body {
 
       &:hover, &:focus {
         background: linear-gradient(to right, $colorUnderlineMenu, lighten($colorUnderlineMenu, 10%));
-        color: $colorTextOnDarkBg;
+        color: $colorTextBright;
       }
     }
   }
@@ -313,7 +313,7 @@ body {
 
 .hero {
   font-family: $fontStackHeaders;
-  color: $colorTextOnDarkBg;
+  color: $colorTextBright;
   text-align: center;
   line-height: 1;
   position: absolute;

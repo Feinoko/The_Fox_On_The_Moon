@@ -64,7 +64,7 @@
     &__burger--transition {
       #burger-top-bar,
       #burger-bottom-bar {
-        stroke: $colorTextNormal;
+        stroke: $colorFontPrimary;
         stroke-width: 2px;
       }
     }
@@ -109,7 +109,7 @@
       .sub-menu-return {
         font-size: 3rem;
         font-weight: 200;
-        color: lighten($colorTextNormal, 10%);
+        color: lighten($colorFontPrimary, 10%);
         position: absolute;
         top: 50%;
         left: -30px;
@@ -149,7 +149,7 @@
 
     &__mobile-nav-list a {
       font-size: $fontSizeFooterSiteTitle;
-      color: lighten($colorTextNormal, 20%);
+      color: lighten($colorFontPrimary, 20%);
       text-transform: uppercase;
       display: block;
       padding: 2rem;
