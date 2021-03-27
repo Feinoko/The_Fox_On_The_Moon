@@ -27,7 +27,7 @@ body {
 /* HEADER */
 
 .site-header {
-  color: $colorTextBright;
+  color: $colorFontAlt;
   font-size: $fontSizeHeader;
   position: relative;
   z-index: $zSiteHeader;
@@ -215,7 +215,7 @@ body {
 
       &:hover, &:focus {
         background: linear-gradient(to right, $colorUnderlineMenu, lighten($colorUnderlineMenu, 10%));
-        color: $colorTextBright;
+        color: $colorFontAlt;
       }
     }
   }
@@ -313,7 +313,7 @@ body {
 
 .hero {
   font-family: $fontStackHeaders;
-  color: $colorTextBright;
+  color: $colorFontAlt;
   text-align: center;
   line-height: 1;
   position: absolute;

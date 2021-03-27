@@ -1,10 +1,22 @@
 /* BUTTONS */
 
-.cta-btn {
+/* 
+normal btn : btn
+options:
+bright btn : --bright (to use on dark bg)
+outline btn (transparent) : --transparent
+animation options:
+accent bg color on hover : --fancy-hover-bg
+text slide anim : --slide-up
+levitate with shadow : --levitate
+
+*/
+
+.btn {
   font-family: $fontStackContent;
   font-size: $fontSizeCTA;
-  color: $colorCtaBtn;
-  background-color: $colorTextBright;
+  color: $colorFontAlt;
+  background-color: $colorAccentPrimary;
   padding: 2rem 4rem;
   border-radius: 70px;
   display: inline-block;
@@ -12,13 +24,31 @@
   transition: all 0.1s ease-in;
   overflow: hidden;
 
+  &--bright {
+    color: $colorAccentPrimary;
+    background-color: $colorFontAlt;
+  }
+
+  &--transparent {
+    background-color: initial;
+    color: $colorAccentPrimary;
+    border: 1px solid $colorAccentPrimary;
+  }
+
   &:hover,
   &:focus {
-    background-color: $colorUnderlineMenu;
     transform: scale(1.1);
-    color: $colorTextBright;
+    color: $colorFontAlt;
 
-    &.cta-btn--slide-up {
+    &.btn--transparent {
+      color: $colorAccentPrimary;
+    }
+
+    &.btn--fancy-hover-bg {
+      background-color: $colorUnderlineMenu;
+    }
+
+    &.btn--slide-up {
       div {
         animation: text-slide-up 0.3s ease-in-out;
   
@@ -46,12 +76,11 @@
         }
       }
     }
-      
-    
-
   }
 
-  // for text slideup animation on hover
-  
-
+  &--levitate:hover,
+  &--levitate:focus {
+    transform: scale(1) translateY(-3px);
+    box-shadow: 10px 10px 5px rgb(235, 235, 235);
+  }
 }
