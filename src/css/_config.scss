@@ -37,6 +37,14 @@ $colorHeaderBg3: #7c1785;
 $colorHeaderBg4: #1963ed;
 $colorHeaderDropdownMenuBg: $colorFontAlt; 
 
+// optional feature: random hero colors on load
+:root {
+  --colorHeaderBg1: #014d57; 
+  --colorHeaderBg2: #068596;
+  --colorHeaderBg3: #7c1785;
+  --colorHeaderBg4: #1963ed;
+}
+
 // other
 $colorUnderlineMenu: #d654e1; // +burger stroke
 $colorBurgerActiveStroke: $colorFontPrimary;

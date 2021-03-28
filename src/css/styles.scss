@@ -340,7 +340,7 @@ body {
     background-position: 2% 0%;
     filter: brightness(1.4);
     will-change: transform;
-    // animation: hero-pattern-morph 25s ease-in-out infinite alternate forwards;
+    animation: hero-pattern-morph 25s ease-in-out infinite alternate forwards;
   }
 
   @keyframes hero-pattern-morph {
@@ -380,20 +380,39 @@ body {
   left: 0;
 }
 
+// .hero-overlay1 {
+//   background: linear-gradient(to top right, $colorHeaderBg1, $colorHeaderBg3);
+//   z-index: $zHeroOverlay1;
+//   will-change: opacity;
+//   opacity: 1;
+//   animation: hero-lighting 9s ease-in-out infinite alternate;
+// }
+
+// .hero-overlay2 {
+//   background: linear-gradient(to top right, $colorHeaderBg3, $colorHeaderBg4);
+//   z-index: $zHeroOverlay2;
+//   will-change: opacity;
+//   opacity: 1;
+//   animation: hero-lighting 9s ease-in-out infinite alternate-reverse;
+// }
+
+
+// optional random hero colors:
+
 .hero-overlay1 {
-  background: linear-gradient(to top right, $colorHeaderBg1, $colorHeaderBg3);
+  background: linear-gradient(to top right, var(--colorHeaderBg1), var(--colorHeaderBg3));
   z-index: $zHeroOverlay1;
   will-change: opacity;
   opacity: 1;
-  // animation: hero-lighting 9s ease-in-out infinite alternate;
+  animation: hero-lighting 9s ease-in-out infinite alternate;
 }
 
 .hero-overlay2 {
-  background: linear-gradient(to top right, $colorHeaderBg3, $colorHeaderBg4);
+  background: linear-gradient(to top right, var(--colorHeaderBg3), var(--colorHeaderBg4));
   z-index: $zHeroOverlay2;
   will-change: opacity;
   opacity: 1;
-  // animation: hero-lighting 9s ease-in-out infinite alternate-reverse;
+  animation: hero-lighting 9s ease-in-out infinite alternate-reverse;
 }
 
 @keyframes hero-lighting {

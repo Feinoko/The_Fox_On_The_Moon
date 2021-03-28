@@ -1,7 +1,8 @@
 import 'regenerator-runtime/runtime' // required when using async/await with parcel
 import '../../css/styles.scss' // styles entry point
 
-/* mobile navigation */
+/** MOBILE NAVI **/
+
 
 
 /* mobile main menu */
@@ -27,11 +28,13 @@ burger_EL.addEventListener('click', () => {
   burger_EL.classList.toggle('site-header__burger--transition');
 
   // remove also the submenu, if it is active
-  if(sub_overlay_EL.offsetWidth != 0) {
+  if (sub_overlay_EL.offsetWidth != 0) {
     sub_overlay_EL.classList.remove('site-header__mobile-overlay--transition');
     sub_overlay_EL.style.opacity = '0';
   }
 })
+
+
 
 
 /* mobile sub menu */
@@ -58,3 +61,23 @@ shop_EL.addEventListener('click', (e) => {
     sub_overlay_EL.style.opacity = '0';
   })
 })
+
+
+/* pick random hero colors // optionnal */
+const root_EL = document.querySelector(':root');
+
+window.onload = randoBgColors();
+
+function randoBgColors() {
+  root_EL.style.setProperty('--colorHeaderBg1', randomColor());
+  root_EL.style.setProperty('--colorHeaderBg2', randomColor());
+  root_EL.style.setProperty('--colorHeaderBg3', randomColor());
+  root_EL.style.setProperty('--colorHeaderBg4', randomColor());
+}
+
+function randomColor() {
+  const colorPalette = ['#014d57', '#068596', '#7c1785', '#1963ed', 'Goldenrod', 'Firebrick'];
+  const index = Math.floor(Math.random() * colorPalette.length);
+  console.log('index of colorPalette returned: ' + index);
+  return colorPalette[index];
+}
