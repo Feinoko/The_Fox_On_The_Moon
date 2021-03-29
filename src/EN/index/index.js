@@ -76,7 +76,7 @@ function randoBgColors() {
 }
 
 function randomColor() {
-  const colorPalette = ['#014d57', '#068596', '#7c1785', '#1963ed', 'Goldenrod', 'Firebrick'];
+  const colorPalette = ['#014d57', '#068596', '#7c1785', '#1963ed'];
   const index = Math.floor(Math.random() * colorPalette.length);
   console.log('index of colorPalette returned: ' + index);
   return colorPalette[index];

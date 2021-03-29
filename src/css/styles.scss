@@ -179,7 +179,7 @@ body {
     height: auto;
     // padding-left: 1rem;
     background-color: $colorHeaderDropdownMenuBg;
-    background: linear-gradient(to bottom right, $colorHeaderDropdownMenuBg, darken($colorHeaderDropdownMenuBg, 20%));
+    background: linear-gradient(to bottom right, $colorHeaderDropdownMenuBg 75%, darken($colorHeaderDropdownMenuBg, 20%));
     box-shadow: 0 0.3rem 2px darken($colorFontPrimary, 10%);
     border-left: 2px solid $colorUnderlineMenu;
     border-radius: 0 0 1rem 0.5rem;
@@ -440,20 +440,34 @@ body {
     padding:  .75*$sectionSpacer 0;
   }
 
-  &__feat-image {
+  &__feat-images-link {
     display: block;
     margin: 1rem;
     flex: 1 1 200px;
+    position: relative;
   }
 
-  img {
+  &__feat-images {
     width: 100%;
   }
 
-  //cta show now
+  //cta shop now
   &__shop {
     margin: 3rem auto 0;
   }
+
+  &__lavender {
+    width: 150px;
+    position: absolute;
+
+    &--TL {
+      top: 0;
+      left: 0;
+    }
+    
+  }
+
+
 
 }
 
