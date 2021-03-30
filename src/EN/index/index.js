@@ -66,7 +66,7 @@ shop_EL.addEventListener('click', (e) => {
 /* pick random hero colors // optionnal */
 const root_EL = document.querySelector(':root');
 
-window.onload = randoBgColors();
+// window.onload = randoBgColors();
 
 function randoBgColors() {
   root_EL.style.setProperty('--colorHeaderBg1', randomColor());

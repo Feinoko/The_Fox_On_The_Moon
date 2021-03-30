@@ -374,14 +374,32 @@ body {
 .hero-overlay1,
 .hero-overlay2 {
   position: absolute;
+  z-index: $zHeroOverlay;
   width: 100%;
   min-height: 100vh;
   top: 0;
   left: 0;
 }
 
+.hero-overlay1 {
+  background: linear-gradient(to top right, $colorHeaderBg2, $colorHeaderBg1);
+  will-change: opacity;
+  opacity: 1;
+  animation: hero-lighting 7s ease-in-out infinite alternate;
+}
+
+.hero-overlay2 {
+  background: linear-gradient(to top right, $colorHeaderBg1, $colorHeaderBg2);
+  will-change: opacity;
+  opacity: 1;
+  animation: hero-lighting 7s ease-in-out infinite alternate-reverse;
+}
+
+
+// optional random hero colors:
+
 // .hero-overlay1 {
-//   background: linear-gradient(to top right, $colorHeaderBg1, $colorHeaderBg3);
+//   background: linear-gradient(to top right, var(--colorHeaderBg1), var(--colorHeaderBg3));
 //   z-index: $zHeroOverlay1;
 //   will-change: opacity;
 //   opacity: 1;
@@ -389,31 +407,12 @@ body {
 // }
 
 // .hero-overlay2 {
-//   background: linear-gradient(to top right, $colorHeaderBg3, $colorHeaderBg4);
+//   background: linear-gradient(to top right, var(--colorHeaderBg3), var(--colorHeaderBg4));
 //   z-index: $zHeroOverlay2;
 //   will-change: opacity;
 //   opacity: 1;
 //   animation: hero-lighting 9s ease-in-out infinite alternate-reverse;
 // }
-
-
-// optional random hero colors:
-
-.hero-overlay1 {
-  background: linear-gradient(to top right, var(--colorHeaderBg1), var(--colorHeaderBg3));
-  z-index: $zHeroOverlay1;
-  will-change: opacity;
-  opacity: 1;
-  animation: hero-lighting 9s ease-in-out infinite alternate;
-}
-
-.hero-overlay2 {
-  background: linear-gradient(to top right, var(--colorHeaderBg3), var(--colorHeaderBg4));
-  z-index: $zHeroOverlay2;
-  will-change: opacity;
-  opacity: 1;
-  animation: hero-lighting 9s ease-in-out infinite alternate-reverse;
-}
 
 @keyframes hero-lighting {
   0% {
@@ -461,8 +460,13 @@ body {
     position: absolute;
 
     &--TL {
-      top: 0;
-      left: 0;
+      top: -20px;
+      left: -20px;
+    }
+
+    &--BR {
+      bottom: -20px;
+      right: -20px;
     }
     
   }
