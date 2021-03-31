@@ -28,6 +28,7 @@ COLORS
 /** global palette **/ 
 $colorAccentPrimary: #006c76;
 $colorFontPrimary: #173336;
+$colorFontAccent: #006D77;
 $colorFontAlt: #f3f3f3; // on dark bg
 
 // hero background
@@ -54,7 +55,10 @@ $colorBurgerActiveStroke: $colorFontPrimary;
 LAYOUT 
 ==== */
 
-$sectionSpacer: 6rem;
+// spacers
+$spacer_S: 2rem;
+$spacer_M: 4rem;
+$spacer_L: 6rem;
 
 // z-indexes
 $zSiteHeader: 5;
@@ -62,3 +66,11 @@ $zMenuUnderline: -5;
 $zHero: -10;
 $zHeroOverlay: -15;
 
+
+/* ====
+MISC
+==== */
+
+// lavender positioning
+$lavenderVertical: -4%;
+$lavenderHorizontal: -6%;

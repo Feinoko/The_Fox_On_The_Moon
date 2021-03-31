@@ -355,11 +355,13 @@ body {
 
   &__showcased-name {
     font-size: $fontSizeAnnouncement;
+    color: $colorFontAlt;
   }
 
   &__showcased-info {
     font-size: $fontSizeSubAnnouncement;
     font-weight: 300;
+    color: $colorFontAlt;
     text-transform: uppercase;
   }
 
@@ -432,18 +434,17 @@ body {
 .latest {
 
   &__title {
-    margin-top: $sectionSpacer;
+    margin-top: $spacer_L;
   }
   
   &__showcase-spacer {
-    @include layoutGuide();
-    padding:  .75*$sectionSpacer 0;
+    padding:  1% 0;
   }
 
   &__feat-images-link {
     display: block;
-    margin: 1rem;
-    flex: 1 1 200px;
+    margin: 2rem;
+    flex: 1 1 170px;
     position: relative;
   }
 
@@ -453,43 +454,47 @@ body {
 
   //cta shop now
   &__shop {
-    margin: 3rem auto 0;
+    margin: $spacer_M auto $spacer_M;
   }
 
   &__lavender {
-    width: 200px;
+    width: 50%;
     position: absolute;
 
     &--TL {
-      top: -20px;
-      left: -20px;
+      top: $lavenderVertical;
+      left: $lavenderHorizontal;
     }
 
     &--BR {
-      bottom: -20px;
-      right: -20px;
+      bottom: $lavenderVertical;
+      right: $lavenderHorizontal;
     }
 
     &--TR {
-      top: -20px;
-      right: -20px;
+      top: $lavenderVertical;
+      right: $lavenderHorizontal;
     }
 
     &--BL {
-      bottom: -20px;
-      left: -20px;
+      bottom: $lavenderVertical;
+      left: $lavenderHorizontal;
     }
 
     &--BC { //bottom center
-      bottom:-20px;
+      bottom: $lavenderVertical;
       left: 50%;
       transform: translateX(-50%);
     }
     
   }
+}
 
-
-
+hr {
+  background-color: $colorAccentPrimary; 
+  height: .5px;
+  border: none;
+  // border-bottom: .1rem solid lighten($colorAccentPrimary, 10%);
 }
 
 

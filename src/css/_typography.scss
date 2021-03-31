@@ -11,7 +11,11 @@
 html {
   font-family: $fontStackContent; // default font
   font-size: 62.5%; /* DX+UX friendly : so that 1rem = 10px... Using Rem is good for accessibility as it allows user to adjust font size with browser */
-  color: rgb(58, 58, 58);
+  color: $colorFontPrimary;
+}
+
+h1,h2,h3 {
+  color: $colorFontAccent;
 }
 
 h1 {
@@ -23,7 +27,7 @@ h1 {
 p {
   font-size: $fontSizeContentText;
   line-height: 1.6;
-  margin: 2rem 0;
+  margin: $spacer_S 0;
   @include layoutGuide(rgb(5, 140, 50));
 }
 
