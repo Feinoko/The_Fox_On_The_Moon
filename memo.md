@@ -83,7 +83,7 @@ redo Max's Thefoxonthemoon website
 
 ***
 ## Questions to client:
-* font for headers
-* 
+* propose font for headers (which among 3)
+* missing single lavender branch
 * 
 

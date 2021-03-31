@@ -379,17 +379,18 @@ body {
   min-height: 100vh;
   top: 0;
   left: 0;
+  mix-blend-mode: multiply;
 }
 
 .hero-overlay1 {
-  background: linear-gradient(to top right, $colorHeaderBg2, $colorHeaderBg1);
+  background: linear-gradient(to top right, $colorHeaderBg3, $colorHeaderBg2);
   will-change: opacity;
   opacity: 1;
   animation: hero-lighting 7s ease-in-out infinite alternate;
 }
 
 .hero-overlay2 {
-  background: linear-gradient(to top right, $colorHeaderBg1, $colorHeaderBg2);
+  background: linear-gradient(to top right, $colorHeaderBg2, $colorHeaderBg3);
   will-change: opacity;
   opacity: 1;
   animation: hero-lighting 7s ease-in-out infinite alternate-reverse;
@@ -456,7 +457,7 @@ body {
   }
 
   &__lavender {
-    width: 150px;
+    width: 200px;
     position: absolute;
 
     &--TL {
@@ -467,6 +468,22 @@ body {
     &--BR {
       bottom: -20px;
       right: -20px;
+    }
+
+    &--TR {
+      top: -20px;
+      right: -20px;
+    }
+
+    &--BL {
+      bottom: -20px;
+      left: -20px;
+    }
+
+    &--BC { //bottom center
+      bottom:-20px;
+      left: 50%;
+      transform: translateX(-50%);
     }
     
   }
