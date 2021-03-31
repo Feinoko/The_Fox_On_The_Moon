@@ -354,8 +354,9 @@ body {
   }
 
   &__showcased-name {
-    font-size: $fontSizeAnnouncement;
+    font-size: 1.3*$fontSizeAnnouncement;
     color: $colorFontAlt;
+    font-weight: 700;
   }
 
   &__showcased-info {

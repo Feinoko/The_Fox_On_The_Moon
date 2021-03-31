@@ -57,8 +57,8 @@ redo Max's Thefoxonthemoon website
 
 ## Problems/bugs to fix:
 * language flags aspect ratio
-* when clicking 'shop' in mob menu while scrolled further down, scrolls all the way back up 
-* 
+* larger container for text on mobile
+* as of 01.04, Pompiere font does not work.. 
 
 
 ***
