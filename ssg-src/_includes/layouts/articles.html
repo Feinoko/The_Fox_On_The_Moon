@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>{{ title }} | The Fox on the Moon</title>
+  <meta name="description" content="{{ description }}">
+  <meta property="og:site_name" content="The Fox On The Moon">
+  <meta property="og:title" content="{{ title }} | The Fox On The Moon">
+  <meta property="og:url" content="https://thefoxonthemoon.com">
+  <meta property="og:type" content="product">
+  <meta property="og:image" content="{{ featuredImage | url }}">
+  <meta name="og:description" content="{{ description }}">
+  <meta property="og:image:width" content="1500">
+  <meta property="og:image:height" content="1500">
+  <meta name="twitter:title" content="The Fox On The Moon">
+  <meta name="twitter:image" content="{{ featuredImage | url }}">
+  <meta name="twitter:url" content="https://thefoxonthemoon.com">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:description" content="{{ description }}">
+  <link rel="shortcut icon" href="../../media/favicon2.png" type="image/x-icon">
+</head>
+
+<body>
+  {{ content | safe }}
+</body>
+
+</html>
