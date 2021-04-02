@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/EN//index/index.html",
+    "dev": "parcel src/EN/index/index.html",
     "prod": "parcel build src/index.html -d prod --out-file app.html",
     "prod-gitpages": "parcel build src/EN//index/index.html --no-minify -d docs --public-url ./",
     "11": "npx eleventy"

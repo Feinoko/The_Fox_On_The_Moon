@@ -290,11 +290,11 @@ body {
     }
 
     .british::after {
-      background-image: url(../media/language-flags/britainFlag.svg);
+      background-image: url(../../media/language-flags/britainFlag.svg);
     }
 
     .french::after {
-      background-image: url(../media/language-flags/frenchFlag.svg);
+      background-image: url(../../media/language-flags/frenchFlag.svg);
     }
   }
 
@@ -332,7 +332,7 @@ body {
     min-height: 100%;
     top: 0;
     left: 0;
-    background: url(../media/banners/banner-hero-darker2.svg);
+    background: url(../../media/banners/banner-hero-darker2.svg);
     transform: scale(1.4);
     z-index: $zHero;
     background-repeat: repeat;
