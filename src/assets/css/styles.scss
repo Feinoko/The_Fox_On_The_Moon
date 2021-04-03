@@ -455,7 +455,7 @@ body {
 
   //cta shop now
   &__shop {
-    margin: $spacer_M auto $spacer_M;
+    margin: $spacer_M auto;
   }
 
   &__lavender {
@@ -483,7 +483,7 @@ body {
     }
 
     &--BC { //bottom center
-      bottom: $lavenderVertical;
+      bottom: .9*$lavenderVertical;
       left: 50%;
       transform: translateX(-50%);
     }
@@ -498,7 +498,13 @@ hr {
   // border-bottom: .1rem solid lighten($colorAccentPrimary, 10%);
 }
 
+.new-in {
 
+  &__title {
+    margin-top: $spacer_L;
+  }
+
+}
 
 
 

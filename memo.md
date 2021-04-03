@@ -37,6 +37,13 @@ redo Max's Thefoxonthemoon website
 * onload text fade/slideup
 * shop now btn glass reflection animation
 
+## things to learn/brushup
+* intersection observer API
+* Snipcart
+* Tags in 11ty
+* 11ty in general
+
+
 ***
 
 ## Process cycle (for each site part) :

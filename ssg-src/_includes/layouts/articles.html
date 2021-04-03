@@ -19,11 +19,11 @@
   <meta name="twitter:url" content="https://thefoxonthemoon.com">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:description" content="{{ description }}">
-  <link rel="shortcut icon" href="/src/media/favicon2.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../../../../media/favicon2.png" type="image/x-icon">
   <meta property="product:price:amount"
     content=" {%- if discountPrice -%} {{ discountPrice }} {%- else -%} {{ price }} {%- endif %}">
   <meta property="product:price:currency" content="{{ currency }}">
-  <meta property="product:availability" content="{{ instock }}">
+  <meta property="product:availability" content="{{ availability }}">
 </head>
 
 <body>
@@ -99,7 +99,7 @@
     <main>
       {{ content | safe }}
     </main>
-    <script src="/src/assets/js/articles.js"></script>
+    <script src="../../../../assets/js/articles.js"></script>
 </body>
 
 </html>
