@@ -444,7 +444,7 @@ body {
 
   &__feat-images-link {
     display: block;
-    margin: 2rem;
+    margin: $spacer_S;
     flex: 1 1 170px;
     position: relative;
   }
@@ -503,6 +503,50 @@ hr {
   &__title {
     margin-top: $spacer_L;
   }
+
+  &__carousel {
+    @include layoutGuide();
+  }
+
+  &__slider {
+    color: rgb(155, 155, 155);
+    font-size: $fontSizeHeader;
+    font-weight: 100;
+    @include layoutGuide(yellow);
+    text-align: right;
+  }
+
+  &__left, &__right {
+    cursor: pointer;
+  }
+
+  &__card-container {
+    display: flex;
+  }
+
+  &__card {
+    @include layoutGuide(teal);
+    flex: 1 1 300px;
+    margin: $spacer_S;
+  }
+
+  &__img-container {
+    @include layoutGuide(blue);
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  
 
 }
 
