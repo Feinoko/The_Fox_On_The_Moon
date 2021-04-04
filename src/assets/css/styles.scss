@@ -506,6 +506,7 @@ hr {
 
   &__carousel {
     @include layoutGuide();
+    overflow: hidden; // to hide panels
   }
 
   &__slider {
@@ -521,7 +522,9 @@ hr {
   }
 
   &__card-container {
+    @include layoutGuide(pink,2);
     display: flex;
+    position: relative; // for the 2nd carousel layer
   }
 
   &__card {
@@ -546,6 +549,18 @@ hr {
     object-fit: cover;
   }
 
+  /* carousel sliding animation : system of side by side panels that slide left/right */
+
+  // second carousel panel
+  &__card-container--second-panel {
+    display: flex;
+    position: absolute;
+    z-index: 10; //must be removed
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(27, 182, 65);
+  }
   
 
 }
