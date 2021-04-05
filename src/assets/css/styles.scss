@@ -555,12 +555,37 @@ hr {
   &__card-container--second-panel {
     display: flex;
     position: absolute;
-    z-index: 10; //must be removed
+    z-index: 10; //must be removed (testing only)
     top: 0; left: 0;
     width: 100%;
     height: 100%;
     background-color: rgb(27, 182, 65);
+    transform: translateX(100%);
+    
   }
+
+  &__panels {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  // &--slide-left {
+  //   animation: carousel-slide .2s ease-in-out forwards;
+  // }
+
+  // &--slide-right {
+  //   animation: carousel-slide .2s ease-in-out reverse forwards;
+  // }
+
+  @keyframes carousel-slide {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+ 
   
 
 }
