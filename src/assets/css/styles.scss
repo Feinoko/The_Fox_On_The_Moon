@@ -572,7 +572,11 @@ hr {
 
   &__card-container--third-panel {
     transform: translateX(200%);
-    // background-color: rgb(30, 80, 42);
+    // make the 3rd panel's only card not grow
+    .new-in__card {
+      flex: 0 1 30%; // not very maintainable...
+    }
+
   }
 
   &__panels {
