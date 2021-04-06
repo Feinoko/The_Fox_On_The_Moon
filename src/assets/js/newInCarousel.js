@@ -16,20 +16,18 @@ slider_EL.onclick = (e) => {
     // update 'position' custom inline css var on each panel (for next click)
     // -100% if click right arrow
     if (e.target.classList.contains('new-in__right')) { 
-      position -= 100;
+      position -= 50;
       panel.setAttribute('style', `--position:${position}`);
     // +100% if click left arrow
     } else if (e.target.classList.contains('new-in__left')) { 
-      position += 100;
+      position += 50;
       console.log('position value: ' + position);
       panel.setAttribute('style', `--position:${position}`);
     }
-
-
-
+    
     // perform the translation
-    // const newPositionTranslate = `translateX(${position}%)`;
-    // console.log(newPosition);
-    // panel.style.transform = newPositionTranslate;
+    const newPositionTranslate = `translateX(${position}%)`;
+    console.log(position);
+    panel.style.transform = newPositionTranslate;
   })
 }
