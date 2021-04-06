@@ -15,14 +15,19 @@ html {
 }
 
 h1,h2,h3 {
+  font-family: $fontStackHeaders;
   color: $colorFontAccent;
   font-weight: 200;
+  margin: $spacer_S 0;
 }
 
 h1 {
-  font-family: $fontStackHeaders;
   font-size: 1.3*$fontSizeSubAnnouncement; // x1.3 si Pompiere font 
   line-height: 1;
+}
+
+h3 {
+  font-size: 1.6*$fontSizeContentText;
 }
 
 p {
