@@ -511,20 +511,25 @@ hr {
 
   &__slider {
     color: rgb(155, 155, 155);
-    font-size: $fontSizeHeader;
+    font-size: 1.3*$fontSizeHeader;
     font-weight: 100;
     @include layoutGuide(yellow);
     text-align: right;
+    margin: 0 $spacer_S;
+    
   }
 
   &__left, &__right {
     cursor: pointer;
+    display: inline-block;
+    transform: scaleX(.75) scaleY(1);
+    user-select: none;
   }
 
   &__card-container {
     @include layoutGuide(pink,2);
     display: flex;
-    position: relative; // for the 2nd carousel layer
+    position: relative; // for the other carousel panels
   }
 
   &__card {
@@ -538,7 +543,7 @@ hr {
     width: 100%;
     height: 0;
     padding-bottom: 100%;
-    position: relative;
+    position: relative; // for new-in__img
   }
 
   &__img {
