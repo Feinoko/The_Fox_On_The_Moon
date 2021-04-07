@@ -1,0 +1,83 @@
+@media screen and (max-width: 900px) and (min-width: 500px) {
+  .new-in {
+    &__card {
+      margin: 0.3 * $spacer_S;
+    }
+
+    p {
+      font-size: 1.5rem;
+      line-height: 1.4;
+    }
+  }
+}
+
+@media screen and (max-width: 500px)  {
+  // panels will not be side by side, they will be in normal flow
+
+  .new-in {
+    // no slider system anymore
+    &__slider {
+      display: none;
+    }
+
+    // remove spacing to extend paragraph lines little bit (readability)
+    &__card {
+      margin: initial;
+    }
+
+    // cards will sit on top of each other
+    &__card-container,
+    &__card-container--second-panel,
+    &__card-container--third-panel {
+      flex-wrap: wrap;
+    }
+
+    // make panels sit on top of each other...
+    &__card-container--second-panel,
+    &__card-container--third-panel {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: translateX(0%);
+    }
+
+    &__card-container--second-panel {
+      top: 100%;
+    }
+
+    &__card-container--third-panel {
+      top: 200%;
+    }
+    // 
+
+    &__card-container--third-panel {
+      .new-in__card {
+        flex: 1 1 300px; 
+      }
+    }
+
+    // allow displaying of below panels that will overflow
+    &__carousel {
+      overflow: initial;
+    }
+
+    // paragraphs not displayed
+    p:not(.new-in__cost) {
+      display: none;
+    }
+
+    &__cost {
+      margin-bottom: $spacer_L;
+      font-size: $fontSizeHeader;
+    }
+
+    // bigger headings
+
+    &__earring-name {
+      font-size: $fontSizeSubAnnouncement;
+      
+    }
+
+  }
+}

@@ -65,7 +65,7 @@ redo Max's Thefoxonthemoon website
 ## Problems/bugs to fix:
 * language flags aspect ratio
 * larger container for text on mobile
-* as of 01.04, Pompiere font does not work.. 
+* new-in carousel : remove inline css variable on mobile version that controls translation (no more slider system) so that subsequent panels are not kept translated, in event that user slides panels then for some reason reduces screen size under 500px (switching from landscape to upright on mobile!)
 
 
 ***
