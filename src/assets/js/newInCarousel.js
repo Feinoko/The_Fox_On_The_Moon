@@ -65,3 +65,33 @@ function removeInlineTranslate() {
     })
   }
 }
+
+/* mobile navigation */
+
+// arrow cursors
+const mobRightArrow_EL = document.querySelector('.new-in__mob-slider-right');
+const mobLeftArrow_EL = document.querySelector('.new-in__mob-slider-left');
+
+// the parent element
+const parent_EL = document.querySelector('.new-in__title');
+
+// the panels
+const panels = document.querySelectorAll('.new-in__panels');
+const numberOfPanels = panels.length;
+console.log(`no. of panels: ${numberOfPanels}`);
+
+// opacity controller
+const opacityController = Array.from(Array(numberOfPanels));
+console.log(opacityController);
+opacityController[0] = 1;
+for (let i=1; i<opacityController.length; i++) {
+  opacityController[i] = 0;
+}
+console.log(opacityController);
+
+parent.onclick = (e) => {
+  if(e.target === mobRightArrow_EL) {
+
+  }
+}
+

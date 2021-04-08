@@ -66,6 +66,7 @@ redo Max's Thefoxonthemoon website
 * language flags aspect ratio
 * larger container for text on mobile
 * new-in carousel : issue on mob version, all cards overflow the following content
+  revamp: mobile panels stacked, slider arrows fade in/out and play on z-index to bring forth panel
 
 
 ***

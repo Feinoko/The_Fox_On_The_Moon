@@ -30,6 +30,7 @@
     &__card-container--second-panel,
     &__card-container--third-panel {
       flex-wrap: wrap;
+      background-color: white;
     }
 
     // make panels sit on top of each other...
@@ -42,19 +43,26 @@
       transform: translateX(0%);
     }
 
+
+    // opacity is changed when user clicks mob slider arrows
+    &__card-container {
+      opacity: 1;
+    }
+
     &__card-container--second-panel {
-      top: 100%;
+      // top: 100%;
+      opacity: 0;
+      
     }
 
     &__card-container--third-panel {
-      top: 200%;
-    }
-    // 
-
-    &__card-container--third-panel {
+      opacity: 0;
+      
       .new-in__card {
         flex: 1 1 300px; 
         height: 500px;
+        // top: 200%;
+        
       }
     }
 
@@ -78,7 +86,23 @@
     &__earring-name {
       font-size: $fontSizeSubAnnouncement;
     }
+
+    // mobile slider 
+    &__mob-slider-left, &__mob-slider-right {
+      font-size: 2.5rem;
+      color: $colorFontPrimary;
+      display: inline-block;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    &__title {}
+
   }
 
+  .text-content-wrapper {
+    @include layoutGuide();
+    width: 95%;
+  }
 
 }

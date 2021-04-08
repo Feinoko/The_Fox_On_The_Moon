@@ -504,6 +504,11 @@ hr {
     margin-top: $spacer_L;
   }
 
+  // for mobile slider, appears only on mobile viewport
+  &__mob-slider-left, &__mob-slider-right {
+    display: none;
+  }
+
   &__carousel {
     @include layoutGuide();
     overflow: hidden; // to hide panels
