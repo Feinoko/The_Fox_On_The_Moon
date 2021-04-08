@@ -65,7 +65,7 @@ redo Max's Thefoxonthemoon website
 ## Problems/bugs to fix:
 * language flags aspect ratio
 * larger container for text on mobile
-* new-in carousel : remove inline css variable on mobile version that controls translation (no more slider system) so that subsequent panels are not kept translated, in event that user slides panels then for some reason reduces screen size under 500px (switching from landscape to upright on mobile!)
+* new-in carousel : issue on mob version, all cards overflow the following content
 
 
 ***
@@ -84,6 +84,7 @@ redo Max's Thefoxonthemoon website
 * put back hero animations
 * accessibility : removed href on 'shop' mob menu to prevent page scrolling backup, it should not be an 'a' but div with aria label / role
 * put back original favicon
+* added a height of 500px to &__card-container--third-panel as temp fix to height issue
 
 ## Potential breaks
 *
