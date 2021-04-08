@@ -586,12 +586,39 @@ hr {
   &__length {
     font-weight: bold;
   }
+}
 
- 
-  
+/* spacer banner */
+
+.spacer-banner {
+  margin-top: $spacer_L;
+  height: 400px;
+  background: url(../../media/banners/index-cosmetic-spacer.png), radial-gradient(circle at center, lighten($colorAccentPrimary,5%), darken($colorAccentPrimary, 15%));
+  background-position: 0% 0%, 0% 50%;
+  background-repeat: no-repeat;
+  background-size: cover, 300%;
+
+  animation: bg-slide 5s ease-in-out alternate infinite;
 
 }
 
+@keyframes bg-slide {
+  0% {
+    background-position: 0% 0%, 0% 50%;
+  }
+  25% {
+    background-position: 0% 0%, 50% 25%;
+  }
+  50% {
+    background-position: 0% 0%, 33% 50%;
+  }
+  75% {
+    background-position: 0% 0%, 68% -25%;
+  }
+  100% {
+    background-position: 0% 0%, 100% 50%;
+  }
+}
 
 
 

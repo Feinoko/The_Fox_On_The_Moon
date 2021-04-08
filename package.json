@@ -7,7 +7,8 @@
     "dev": "parcel src/en/index/index.html",
     "prod": "parcel build src/index.html -d prod --out-file app.html",
     "prod-gitpages": "parcel build src/en//index/index.html --no-minify -d docs --public-url ./",
-    "11": "npx eleventy"
+    "11": "npx eleventy",
+    "purge-media": "rm -rf ./src/media"
   },
   "author": "",
   "license": "ISC",
