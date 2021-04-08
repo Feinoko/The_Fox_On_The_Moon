@@ -1,4 +1,4 @@
-/* new-in carousel animation */
+/* new-in carousel interaction */
 
 const slider_EL = document.querySelector('.new-in__slider');
 const rightArrow_EL = document.querySelector('.new-in__right');
@@ -66,7 +66,14 @@ function removeInlineTranslate() {
   }
 }
 
-/* mobile navigation */
+
+/* ==========
+ mobile navigation 
+ ========= */
+
+/* concept: play on opacity, current panel has opacity = 1, others = 0. As the user clicks arrows, the '1' opacity is switched between panels, using an array */
+
+// variables:
 
 // arrow cursors
 const mobRightArrow_EL = document.querySelector('.new-in__mob-slider-right');
@@ -80,17 +87,36 @@ const panels = document.querySelectorAll('.new-in__panels');
 const numberOfPanels = panels.length;
 console.log(`no. of panels: ${numberOfPanels}`);
 
-// opacity controller
-const opacityController = Array.from(Array(numberOfPanels));
-console.log(opacityController);
+// opacity controller, is an array with all indexes = 0 opacity, except the one active = 1 opacity
+let opacityController = Array.from(Array(numberOfPanels)); // for maintainability, when changing collections maybe there will be 5 panels this time if Max is very creative, it needs to adapt
 opacityController[0] = 1;
 for (let i=1; i<opacityController.length; i++) {
   opacityController[i] = 0;
 }
-console.log(opacityController);
+console.log(`this is the array containing the opacity values 'opacityController', equal to ${opacityController}`);
 
 parent.onclick = (e) => {
+  let indexOfCurrentVisiblePanel;
   if(e.target === mobRightArrow_EL) {
+    // finding the index that is equal to 1...
+    opacityController.forEach((opacity, index) => {
+      if(opacity === 1) {
+        indexOfCurrentVisiblePanel = index;
+        console.log(`panel no. ${indexOfCurrentVisiblePanel+1} is currently visible`);
+      }
+    })
+    // ... and updating the opacityController by assigning the 1 to the next index (=the next panel)...
+    opacityController.forEach((opacity, index, arr) => {
+      arr[index] = 0;
+    })
+    console.log(`opacityController should be set to all zeros... : ${opacityController}`);
+    opacityController[indexOfCurrentVisiblePanel+1] = 1;
+    console.log(`and adding '1' to the next index... : ${opacityController}`);
+    // ...then assigning the opacity to the elements
+    for (let i = 0; i < panels_EL.length; i++) {
+      panels_EL[i].style.opacity = `${opacityController[i]}`;
+      console.log(`panel no. ${i+1} has opacity = ${panels_EL[i].style.opacity}`);
+    }
 
   }
 }
