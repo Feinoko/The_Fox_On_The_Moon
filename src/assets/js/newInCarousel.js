@@ -35,21 +35,33 @@ slider_EL.onclick = (e) => {
 
 /* remove inline css variable on mobile version that controls translation (no more slider system) so that subsequent panels are not kept translated, in event that user slides panels then for some reason reduces screen size under 500px (switching from landscape to upright on mobile!) */
 
+// variables
+const mediaQuery = window.matchMedia('(max-width: 500px)');
+let wasMobile; // below value-resets occur only if viewport was in mobile mode 1st (reverting from mobile)
+
 // listen for window resize
 window.addEventListener('resize', removeInlineTranslate);
 
 // media query, trigger when screen below 500px
 function removeInlineTranslate() {
-  const mediaQuery = window.matchMedia('(max-width: 500px)');
+  
   if(mediaQuery.matches) {
     console.log('hello');
     panels_EL.forEach((panel) => {
     panel.style.transform = 'translateX(0)';
+    wasMobile = true;
     })
-  } else {
-    // reset css var to initial in case user enlarges screen again above 500px (messes up slider system panels)
+  } 
+  // reset translateX inline css & custom var --translate to initial in case user enlarges screen again above 500px (otherwise messes up slider system panels)
+  if(wasMobile && !mediaQuery.matches) {
+    console.log('reverted to wide / panel mode');
+    let translateInitialValue = 0;
+    let position = 0;
     panels_EL.forEach((panel) => {
-      
+      panel.style.transform = `translateX(${translateInitialValue}%)`;
+      translateInitialValue += 100;
+      panel.setAttribute('style', `--position:${position}`);
+      position += 100;
     })
   }
 }
