@@ -71,7 +71,7 @@ function removeInlineTranslate() {
  mobile navigation 
  ========= */
 
-/* concept: play on opacity, current panel has opacity = 1, others = 0. As the user clicks arrows, the '1' opacity is switched between panels, using an array */
+/* concept: play on opacity, the parent panel always has opacity = 1, and the others by default 0. As the user clicks arrows, children panels get opacity from 0 to 1, in turn, using an array */
 
 // variables:
 
@@ -83,39 +83,41 @@ const mobLeftArrow_EL = document.querySelector('.new-in__mob-slider-left');
 const parent_EL = document.querySelector('.new-in__title');
 
 // the panels
-const panels = document.querySelectorAll('.new-in__panels');
+const panels = document.querySelectorAll('.new-in__card-container .new-in__panels');
 const numberOfPanels = panels.length;
 console.log(`no. of panels: ${numberOfPanels}`);
 
-// opacity controller, is an array with all indexes = 0 opacity, except the one active = 1 opacity
+// opacity controller for children panels, is an array with all indexes set to 0 opacity by default
 let opacityController = Array.from(Array(numberOfPanels)); // for maintainability, when changing collections maybe there will be 5 panels this time if Max is very creative, it needs to adapt
-opacityController[0] = 1;
-for (let i=1; i<opacityController.length; i++) {
+// setting default 0 values
+for (let i=0; i<opacityController.length; i++) {
   opacityController[i] = 0;
 }
 console.log(`this is the array containing the opacity values 'opacityController', equal to ${opacityController}`);
 
 parent.onclick = (e) => {
-  let indexOfCurrentVisiblePanel;
+  let indexOfCurrentVisiblePanel = -1; 
   if(e.target === mobRightArrow_EL) {
-    // finding the index that is equal to 1...
+    // finding the index that is equal to 1 (if any, by default there is none as all children panels are 0 opacity)...
     opacityController.forEach((opacity, index) => {
       if(opacity === 1) {
         indexOfCurrentVisiblePanel = index;
         console.log(`panel no. ${indexOfCurrentVisiblePanel+1} is currently visible`);
       }
+      // if all indexes = 0, set the 1st panel to 1...
+      if(indexOfCurrentVisiblePanel === -1) {
+        opacityController[0] = 1;
+        console.log(`opacityController: ${opacityController}`);
+      // else, set the next index to 1
+      } else {
+        opacityController[indexOfCurrentVisiblePanel+1] = 1;
+        console.log(`opacityController: ${opacityController}`);
+      }
     })
-    // ... and updating the opacityController by assigning the 1 to the next index (=the next panel)...
-    opacityController.forEach((opacity, index, arr) => {
-      arr[index] = 0;
-    })
-    console.log(`opacityController should be set to all zeros... : ${opacityController}`);
-    opacityController[indexOfCurrentVisiblePanel+1] = 1;
-    console.log(`and adding '1' to the next index... : ${opacityController}`);
-    // ...then assigning the opacity to the elements
-    for (let i = 0; i < panels_EL.length; i++) {
-      panels_EL[i].style.opacity = `${opacityController[i]}`;
-      console.log(`panel no. ${i+1} has opacity = ${panels_EL[i].style.opacity}`);
+    // ...then assigning the opacity to the elements (initial i=1 to exclude the parent who always has 1 opacity)
+    for (let i = 1; i < panels_EL.length; i++) {
+      panels_EL[i].style.opacity = `${opacityController[i-1]}`;
+      console.log(`panel no. ${i+1} has opacity = ${opacityController[i-1]}`);
     }
 
   }
