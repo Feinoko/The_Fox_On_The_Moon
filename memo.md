@@ -65,17 +65,16 @@ redo Max's Thefoxonthemoon website
 ## Problems/bugs to fix:
 * language flags aspect ratio
 * larger container for text on mobile
-* new-in carousel : issue on mob version, all cards overflow the following content
-  revamp: mobile panels stacked, slider arrows fade in/out and play on z-index to bring forth panel
+* reset all panels opacity to 1 when enlarging screen again
 
 
 ***
 
 ## Stashed tasks (put on backburner to keep focused on current task)
-* add fox background to mob overlay menu (b&w, bottom right)
-* make "on sale" standout in submenu
-* refactor js (DRY on mobile menu logic)
-* remove will-change and test
+* 
+* 
+* 
+* 
 
 
 ***
