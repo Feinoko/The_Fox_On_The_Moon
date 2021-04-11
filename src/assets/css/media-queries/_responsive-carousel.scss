@@ -43,6 +43,9 @@
       transform: translateX(0%);
     }
 
+    &__panels {
+      transition: opacity .3s ease-in-out;
+    }
 
     // opacity is changed when user clicks mob slider arrows
     &__card-container {
@@ -94,9 +97,37 @@
       display: inline-block;
       cursor: pointer;
       user-select: none;
+      padding: 2rem;
+      @include layoutGuide();
     }
 
-    // &__title {}
+    &__mob-slider-left {
+      animation: mob-right-arrow .7s ease-in-out alternate infinite;
+    }
+
+    &__mob-slider-right {
+      animation: mob-left-arrow .7s ease-in-out alternate infinite;
+    }
+
+    @keyframes mob-right-arrow {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(15%);
+      }
+    }
+
+    @keyframes mob-left-arrow {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-15%);
+      }
+    }
 
   }
 

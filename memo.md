@@ -66,6 +66,7 @@ redo Max's Thefoxonthemoon website
 * language flags aspect ratio
 * larger container for text on mobile
 * reset all panels opacity to 1 when enlarging screen again
+* mobile menu can be clicked even if not visible (opacity to 0 but not translated enough ? disable pointer events?)
 
 
 ***
@@ -81,10 +82,9 @@ redo Max's Thefoxonthemoon website
 ## Reminders
 * inverted order of cart and language in styles, so that on mobile the cart appears on top
 * remove margin-bottom on body (dev only)
-* put back hero animations
 * accessibility : removed href on 'shop' mob menu to prevent page scrolling backup, it should not be an 'a' but div with aria label / role
 * put back original favicon
-* added a height of 500px to &__card-container--third-panel as temp fix to height issue
+* 
 
 ## Potential breaks
 *
@@ -92,6 +92,6 @@ redo Max's Thefoxonthemoon website
 ***
 ## Questions to client:
 * propose font for headers (which among 3)
-* missing single lavender branch
+* 
 * 
 

@@ -515,7 +515,7 @@ hr {
   }
 
   &__slider {
-    color: rgb(155, 155, 155);
+    color: $colorFontPrimary;
     font-size: 1.3*$fontSizeHeader;
     font-weight: 100;
     @include layoutGuide(yellow);
