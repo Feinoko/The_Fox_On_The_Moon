@@ -66,7 +66,7 @@ redo Max's Thefoxonthemoon website
 * language flags aspect ratio
 * larger container for text on mobile
 * reset all panels opacity to 1 when enlarging screen again
-* mobile menu can be clicked even if not visible (opacity to 0 but not translated enough ? disable pointer events?)
+* mobile nav can be clicked even if not visible (opacity to 0 but not translated enough ? disable pointer events?)
 
 
 ***
