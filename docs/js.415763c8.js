@@ -868,19 +868,277 @@ try {
   Function("r", "regeneratorRuntime = r")(runtime);
 }
 
-},{}],"a0i0":[function(require,module,exports) {
+},{}],"HLm6":[function(require,module,exports) {
 
-},{"./..\\media\\language-flags\\britainFlag.svg":[["britainFlag.5716b3ba.svg","P02J"],"P02J"],"./..\\media\\language-flags\\frenchFlag.svg":[["frenchFlag.6d0f27c8.svg","izvn"],"izvn"],"./..\\media\\banners\\banner-hero-darker2.svg":[["banner-hero-darker2.65153535.svg","ZBjp"],"ZBjp"]}],"Focm":[function(require,module,exports) {
+},{"./..\\..\\media\\language-flags\\britainFlag.svg":[["britainFlag.1a967940.svg","P02J"],"P02J"],"./..\\..\\media\\language-flags\\frenchFlag.svg":[["frenchFlag.0b354e95.svg","izvn"],"izvn"],"./..\\..\\media\\banners\\banner-hero-darker2.svg":[["banner-hero-darker2.cb2a217d.svg","ZBjp"],"ZBjp"],"./..\\..\\media\\banners\\index-cosmetic-spacer.png":[["index-cosmetic-spacer.cb1b5936.png","ZOFL"],"ZOFL"]}],"sGFj":[function(require,module,exports) {
+/* =========================
+ NEW-IN CAROUSEL INTERACTIONS
+ ===========================  */
+
+/* ========
+Table of Contents:
+1.  Desktop navigation
+2.  Mobile navigation
+3.  Resets
+============ */
+
+/* =====
+Desktop navigation
+====== */
+var slider_EL = document.querySelector('.new-in__slider');
+var rightArrow_EL = document.querySelector('.new-in__right');
+var leftArrow_EL = document.querySelector('.new-in__left');
+var panels_EL = document.querySelectorAll('.new-in__panels');
+var howManyPanels = panels_EL.length; // keep record of number of clicks on right or left arrow, to determine limit after which event not triggered, due to user having reached end
+
+var counter = 0;
+var canSlideRight = true; // turns to false as user reached end of carousel, grays out arrow & disable event
+
+var canSlideLeft = false; // by default carousel is at left end (origin) so user cannot slide left
+// set default greyed out left arrow
+
+leftArrow_EL.style.color = 'rgb(170, 170, 170)';
+
+slider_EL.onclick = function (e) {
+  panels_EL.forEach(function (panel) {
+    // get 'position' custom inline css var
+    var panelPositionProperty = window.getComputedStyle(panel);
+    var position = Number(panelPositionProperty.getPropertyValue('--position')); // update 'position' custom inline css var on each panel (for next click):
+    // -100% if click right arrow
+
+    if (e.target.classList.contains('new-in__right')) {
+      if (canSlideRight) {
+        // allow event handler unless user has reached end of carousel
+        canSlideLeft = true; // enables sliding left next time
+
+        leftArrow_EL.style.color = '#173336'; // left arrow becomes clickable again
+
+        position -= 50;
+        panel.setAttribute('style', "--position:".concat(position));
+      } // +100% if click left arrow
+
+    } else if (e.target.classList.contains('new-in__left')) {
+      if (canSlideLeft) {
+        // allow event handler unless user has reached end of carousel
+        canSlideRight = true; // enables sliding left next time
+
+        rightArrow_EL.style.color = '#173336'; // right arrow becomes clickable again
+
+        position += 50;
+        console.log('position value: ' + position);
+        panel.setAttribute('style', "--position:".concat(position));
+      }
+    } // perform the translation
+
+
+    var newPositionTranslate = "translateX(".concat(position, "%)");
+    console.log(position);
+    panel.style.transform = newPositionTranslate;
+  }); // end foreach
+  // check if user has reached end panel:
+  // if reached right limit
+
+  if (e.target.classList.contains('new-in__right')) {
+    counter++;
+    console.log("counter: ".concat(counter));
+
+    if (counter >= howManyPanels - 1) {
+      counter = howManyPanels - 1;
+      canSlideRight = false;
+      console.log("canSlideright set to false");
+      rightArrow_EL.style.color = 'rgb(170, 170, 170)';
+    }
+  } // if reached left limit
+
+
+  if (e.target.classList.contains('new-in__left')) {
+    counter--;
+    console.log("counter: ".concat(counter));
+
+    if (counter <= 0) {
+      counter = 0;
+      canSlideLeft = false;
+      console.log("canSlideleft set to false");
+      leftArrow_EL.style.color = 'rgb(170, 170, 170)';
+    }
+  }
+};
+/* ==========
+ Mobile navigation 
+ ========= */
+
+/* concept: play on opacity, the parent panel always has opacity = 1, and the others by default 0. As the user clicks arrows, children panels get opacity from 0 to 1, in turn, using an array */
+// variables:
+// arrow cursors
+
+
+var mobRightArrow_EL = document.querySelector('.new-in__mob-slider-right');
+var mobLeftArrow_EL = document.querySelector('.new-in__mob-slider-left'); // the parent element
+
+var parent_EL = document.querySelector('.new-in__title'); // the panels
+
+var panels = document.querySelectorAll('.new-in__card-container .new-in__panels');
+var numberOfPanels = panels.length;
+console.log("no. of panels: ".concat(numberOfPanels)); // opacity controller for children panels, is an array with all indexes set to 0 opacity by default
+
+var opacityController = Array.from(Array(numberOfPanels)); // for maintainability, when changing collections maybe there will be 5 panels this time if Max is very creative ;), it needs to adapt
+// setting default 0 values
+
+for (var i = 0; i < opacityController.length; i++) {
+  opacityController[i] = 0;
+}
+
+console.log("this is the array containing the opacity values 'opacityController', equal to ".concat(opacityController)); // keep record of number of clicks on right or left arrow, to determine limit after which event not triggered, due to user having reached end
+
+counter = 0;
+canSlideRight = true; // turns to false as user reached end of carousel, grays out arrow & disable event
+
+canSlideLeft = false; // by default carousel is at left end (origin) so user cannot slide left
+// set default greyed out left arrow
+
+mobLeftArrow_EL.style.color = 'rgb(170, 170, 170)'; // event handler
+
+parent.onclick = function (e) {
+  var indexOfTargetPanel = -1; // sliding to right
+
+  if (e.target === mobRightArrow_EL) {
+    // allow event handler unless user has reached end of carousel
+    if (canSlideRight) {
+      canSlideLeft = true; // enables sliding left next time
+      // finding the index that is equal to 1 (if any, by default there is none as all children panels are 0 opacity)...
+
+      opacityController.forEach(function (opacity, index) {
+        if (opacity === 1) {
+          indexOfTargetPanel = index;
+          console.log("panel no. ".concat(indexOfTargetPanel + 1, " is currently visible"));
+        }
+      }); // if all indexes = 0, set the 1st panel to 1...
+
+      if (indexOfTargetPanel === -1) {
+        opacityController[0] = 1;
+        console.log("opacityController: ".concat(opacityController)); // else, set the next index to 1
+      } else {
+        opacityController[indexOfTargetPanel + 1] = 1;
+        console.log("opacityController: ".concat(opacityController));
+      } // ...then assigning the opacity to the elements (initial i=1 to exclude the parent who always has 1 opacity)
+
+
+      for (var _i = 1; _i < panels_EL.length; _i++) {
+        panels_EL[_i].style.opacity = "".concat(opacityController[_i - 1]);
+        console.log("panel no. ".concat(_i + 1, " has opacity = ").concat(opacityController[_i - 1]));
+      }
+
+      mobLeftArrow_EL.style.color = '#173336'; // left arrow becomes clickable again
+      // check if user has reached end panel
+
+      counter++;
+      console.log("counter: ".concat(counter));
+
+      if (counter === numberOfPanels) {
+        canSlideRight = false;
+        console.log("canSlideRight set to false");
+        mobRightArrow_EL.style.color = 'rgb(170, 170, 170)';
+      }
+    }
+  } // sliding to left
+
+
+  if (e.target === mobLeftArrow_EL) {
+    if (canSlideLeft) {
+      canSlideRight = true; // enables sliding right next time;
+      // finding the index that is equal to 0 if any
+
+      opacityController.forEach(function (opacity, index) {
+        if (opacity === 0) {
+          indexOfTargetPanel = index;
+          console.log("panel no. ".concat(indexOfTargetPanel + 1, " is currently invisible"));
+        }
+      }); // if all indexes = 1, set the last panel to 0...
+
+      if (indexOfTargetPanel === -1) {
+        opacityController[opacityController.length - 1] = 0;
+        console.log("opacityController: ".concat(opacityController)); // else, set the previous index to 0
+      } else {
+        opacityController[indexOfTargetPanel - 1] = 0;
+        console.log("opacityController: ".concat(opacityController));
+      } // ...then assigning the opacity to the elements (initial i=1 to exclude the parent who always has 1 opacity)
+
+
+      for (var _i2 = 1; _i2 < panels_EL.length; _i2++) {
+        panels_EL[_i2].style.opacity = "".concat(opacityController[_i2 - 1]);
+        console.log("panel no. ".concat(_i2 + 1, " has opacity = ").concat(opacityController[_i2 - 1]));
+      }
+
+      mobRightArrow_EL.style.color = '#173336'; // right arrow becomes clickable again
+      // check if user has reached end panel
+
+      counter--;
+      console.log("counter: ".concat(counter));
+
+      if (counter === 0) {
+        canSlideLeft = false;
+        console.log("canSlideLeft set to false");
+        mobLeftArrow_EL.style.color = 'rgb(170, 170, 170)';
+      }
+    }
+  }
+};
+/* ====================
+ resets when switching from desktop/mobile version 
+ ====================== */
+// variables
+
+
+var mediaQuery = window.matchMedia('(max-width: 500px)');
+var wasMobile; // below value-resets occur only if viewport was in mobile mode 1st (reverting from mobile)
+// listen for window resize
+
+window.addEventListener('resize', propertyResetter); // media query, trigger when screen below 500px
+
+function propertyResetter() {
+  // resets translates, resets carousel position to origin by resetting opacity (1st panel has 1, others have 0)
+  if (mediaQuery.matches) {
+    console.log('hello');
+    panels_EL.forEach(function (panel) {
+      panel.style.transform = 'translateX(0)';
+      panel.style.opacity = '0';
+      wasMobile = true;
+    });
+    panels_EL[0].style.opacity = '1'; // counter keeps tracks of whether user has reached end of carousels (to grey out arrow and prevent further sliding)
+
+    counter = 0;
+  } // reset translateX inline css & custom var --translate to initial value in case user enlarges screen again above 500px (otherwise messes up slider system panels)
+
+
+  if (wasMobile && !mediaQuery.matches) {
+    console.log('reverted to wide / panel mode');
+    var translateInitialValue = 0;
+    var position = 0;
+    panels_EL.forEach(function (panel) {
+      panel.style.transform = "translateX(".concat(translateInitialValue, "%)");
+      translateInitialValue += 100;
+      panel.setAttribute('style', "--position:".concat(position));
+      position += 100; // some panels have been set to 0 opacity if user had used slider on mob viewport, so they must all be visible if reverting to desktop mode
+
+      panel.style.opacity = '1'; // counter that keeps tracks of whether user has reached end of carousels (to grey out arrow and prevent further sliding)
+
+      counter = 0;
+    });
+  }
+}
+},{}],"dYQb":[function(require,module,exports) {
 "use strict";
 
 require("regenerator-runtime/runtime");
 
-require("../../css/styles.scss");
+require("../css/styles.scss");
+
+require("./newInCarousel");
 
 // required when using async/await with parcel
 // styles entry point
 
-/* mobile navigation */
+/** MOBILE NAVI **/
 
 /* mobile main menu */
 var overlay_EL = document.querySelector('.site-header__mobile-overlay');
@@ -922,5 +1180,22 @@ shop_EL.addEventListener('click', function (e) {
     sub_overlay_EL.style.opacity = '0';
   });
 });
-},{"regenerator-runtime/runtime":"dgxz","../../css/styles.scss":"a0i0"}]},{},["Focm"], null)
-//# sourceMappingURL=index.316d905f.js.map
+/* pick random hero colors // optionnal */
+
+var root_EL = document.querySelector(':root'); // window.onload = randoBgColors();
+
+function randoBgColors() {
+  root_EL.style.setProperty('--colorHeaderBg1', randomColor());
+  root_EL.style.setProperty('--colorHeaderBg2', randomColor());
+  root_EL.style.setProperty('--colorHeaderBg3', randomColor());
+  root_EL.style.setProperty('--colorHeaderBg4', randomColor());
+}
+
+function randomColor() {
+  var colorPalette = ['#014d57', '#068596', '#7c1785', '#1963ed'];
+  var index = Math.floor(Math.random() * colorPalette.length);
+  console.log('index of colorPalette returned: ' + index);
+  return colorPalette[index];
+}
+},{"regenerator-runtime/runtime":"dgxz","../css/styles.scss":"HLm6","./newInCarousel":"sGFj"}]},{},["dYQb"], null)
+//# sourceMappingURL=js.415763c8.js.map
